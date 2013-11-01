@@ -1,15 +1,26 @@
 % Plain Text Workflow 
-% Alex Gil, Dennis Tenen, Grant Wythoff
+% Alex Gil; Dennis Tenen; Grant Wythoff
 % Fall 2013
 
 # Philosophy 
-Authoring, storing, and retrieving documents are activities at the center of the humanities research workflow. And yet, we base our practice on propriatery tools and formats which struggle with even the most basic requirements of academic writing. Many of the readers will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, many journals insist on submisisons in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. Writing becomes aliented form tlypesetting, inviting third In this tutorial, we suggest an alternative way 
+Authoring, storing, and retrieving documents are activities at the center of the humanities research workflow. And yet, many base their practice on proprietary tools and formats which struggle with even the most basic requirements of academic writing. The readers will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication, furthermore adding unnecessary barriers to unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.
 
-The idea is to start with a plain text, lightweight, durable, and human-readable format like markdown and finish typesetting in something more robust like LaTeX. You want to delay the converstion as close as possible to publication--it becomes expensive to switch formats once you convert to .tex or .docx.
-Start in markdown (.text) for early drafts. Once you commit to the publication venue, use Pandoc to cast into either Open Office (.odt and later .doc) or LaTeX (.tex) or HTML and clean up from there.
- text
+In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. Inspired by best practices in a variety of disciplines, we were guided by the following principles:
+
+1. *Preference for plain-text, fully transparent, human-readable formats.* When writing in Word or Google Docs, what you see is not what you get. The file contains hidden automatically-generated formatting characters. When things go wrong, the obfuscated typesetting layer is difficult to troubleshoot. Plain text ensures transparency and answers to the standards of long-term preservation. MS Word may go the way of Word Perfect in the future, but plain text will always remain easy to read, catalog, mine, and transform. As an additional feature, plain text enables easy and powerful versioning of the document. 
+
+2. *Platform independence.* Writing in plain text means you can easily share, edit, and archive your documents in virtually any environment. Your plain text files will be accessible on cell phones, tablets, or low-powered terminals in some remote library. Plain text is future proof. Whatever software or hardware comes along next, it will be able to understand your plain text files. 
+
+3. *Separation of form and content.* Writing and formatting at the same time is distracting. The idea is to write first, and format later, as close as possible to the time of publication. 
+
+4. *Support for the academic apparatus.* The workflow needs to handle footnotes, figures, and bibliographies gracefully.
+
+5. *One source many destinations.* As the vectors of publication multiply, we need to be able to generate a multiplicity of formats including for slide projection, print, web, and mobile. Ideally, we would like to be able to generate most common formats without breaking bibliographic dependencies. 
+
 # Use cases
 # Requirements
 # Writing
 # Typesetting
+# Version Control
+Edit directly in github.
 # Discussion
