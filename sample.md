@@ -17,7 +17,10 @@ In this tutorial, we would like to suggest an alternative workflow built around 
 
 5. *One source many destinations.* As the vectors of publication multiply, we need to be able to generate a multiplicity of formats including for slide projection, print, web, and mobile. Ideally, we would like to be able to generate most common formats without breaking bibliographic dependencies. 
 
+Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .doc and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
+
 # Use cases
+We will cover three use cases in this tutorial. The first, is generating a .pdf 
 
 # Requirements
 # Writing
