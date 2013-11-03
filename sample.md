@@ -1,3 +1,5 @@
+% Plain Text Workflow 
+% Dennis Tenen; Grant Wythoff
 % Fall 2013
 
 # Philosophy 
