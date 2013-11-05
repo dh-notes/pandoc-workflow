@@ -23,8 +23,6 @@ In this tutorial, you will learn to use [Pandoc](http://johnmacfarlane.net/pando
 
 We will cover three use cases here. In the **first**, you will learn the basics of [markdown](http://daringfireball.net/projects/markdown/) -- an easy to read and write plain text markup syntax -- and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the **second**, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. **Finally**, we will use Pandoc in conjunction with [reveal.js](http://lab.hakim.se/reveal-js/#/) to make some attractive slides. File management and versioning using Git will be covered in another tutorial.
 
-One more test.
-
 Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .doc and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
 
 As a side-effect of this tutorial, you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows. 
@@ -46,8 +44,6 @@ You will need to following software installed on your computer:
 * LaTeX. Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf.
 
 # Case 1: Markdown basics
-
-Testing testing.
 
 # Case 2: Working with Bibliographies
 
