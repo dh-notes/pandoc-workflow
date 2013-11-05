@@ -63,14 +63,14 @@ date: November 4, 2013
 ...
 
 # Philosophy 
-Authoring, storing, and retrieving documents are *central* to the humanities research workflow.^[This point is clarified here.] 
+Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
 
-And yet, many scholars base their practice on [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) and formats.
+But many scholars work with [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) tools.
 
 ## Principles
 
 - **Preference for Plain Text** and human readable formats.
-- **Platform Independence** means share, edit, and write in any environment.
+- **Platform Independence** means share and edit in any environment.
 
 # Use Cases
 
