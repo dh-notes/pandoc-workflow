@@ -38,6 +38,8 @@ You will need to following software installed on your computer:
 
 # Case 1: Markdown basics
 
+Testing testing.
+
 # Case 2: Working with Bibliographies
 
 # Case 3: Slides 
