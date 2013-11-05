@@ -37,11 +37,11 @@ The most important thing in following this (or any other) tutorial, is to unders
 # Software requirements
 You will need to following software installed on your computer:
 
-* A plain text editor. For beginners, we recommend Text Wrangler on a Mac, Notepad++ for Windows, and gEdit for Linux. More advanced users may want to experiment with flavors of Emacs of Vim. It does not matter what you use as long as it is explicitly a plain text editor. 
+* A plain text editor. For beginners, we recommend [Text Wrangler](http://www.barebones.com/products/textwrangler/) on a Mac, [Notepad++](http://notepad-plus-plus.org/) for Windows, and [gEdit](https://projects.gnome.org/gedit/) for Linux. More advanced users may want to experiment with flavors of Emacs of Vim. It does not matter what you use as long as it is explicitly a plain text editor. 
 
-* Pandoc. Pandoc was created and is maintained by John MacFarlane at UC Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents.
+* Pandoc (detailed, platform-specific installation instructions [available here](http://johnmacfarlane.net/pandoc/installing.html)). Pandoc was created and is maintained by John MacFarlane at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents.
 
-* LaTeX. Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf.
+* LaTeX (detailed, platform-specific installation instructions [available here](http://johnmacfarlane.net/pandoc/installing.html)). Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf.
 
 # Case 1: Markdown basics
 
