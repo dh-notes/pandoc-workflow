@@ -65,7 +65,7 @@ date: November 4, 2013
 # Philosophy 
 Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
 
-But many scholars work with [proprietary](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) tools.
+But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
 
 ## Principles
 
