@@ -25,7 +25,7 @@ In this tutorial, we would like to suggest an alternative workflow built around 
 
 In this tutorial, you will learn to use [Pandoc](http://johnmacfarlane.net/pandoc/) -- a "universal markup converter" run from the command line -- to convert a plain text file into a number of beautifully formatted file types: PDF, .docx, HTML, .tex, slide decks, and more. 
 
-We will cover three use cases here. In the **first**, you will learn the basics of [markdown](http://daringfireball.net/projects/markdown/) -- an easy to read and write plain text markup syntax -- and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the **second**, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. **Finally**, we will use Pandoc in conjunction with [reveal.js](http://lab.hakim.se/reveal-js/#/) to make some attractive slides. File management and versioning using Git will be covered in another tutorial.
+We will cover three use cases here. In the first, you will learn the basics of [markdown](http://daringfireball.net/projects/markdown/) -- an easy to read and write plain text markup syntax -- and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. Finally, we will use Pandoc in conjunction with [reveal.js](http://lab.hakim.se/reveal-js/#/) to make some attractive slides. File management and versioning using Git will be covered in another tutorial.
 
 Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .doc and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
 
@@ -56,11 +56,10 @@ To begin, create a folder into which you will save all of your projects. Open a 
 ```
 ---
 title: Plain Text Workflow 
-author: |
-    Dennis Tenen\
-    Grant Wythoff
+author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
-...
+
+---
 
 # Philosophy 
 Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
