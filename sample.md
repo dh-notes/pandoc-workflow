@@ -1,11 +1,16 @@
-% Plain Text Workflow 
-% Dennis Tenen; Grant Wythoff
-% Fall 2013
+---
+Title: Plain Text Workflow 
+Author: Dennis Tenen
+Author: Grant Wythoff
+Date: November 4, 2013
+...
 
 # Philosophy 
-Authoring, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.
+Authoring, storing, and retrieving documents are activities *central* to the humanities research workflow. And yet, many scholars base their practice on [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.
 
 In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. Inspired by best practices in a variety of disciplines, we were guided by the following principles:
+
+## Principles
 
 1. *Preference for plain-text, fully transparent, human-readable formats.* When writing in Word or Google Docs, what you see is not what you get. The file contains hidden automatically-generated formatting characters. When things go wrong, the obfuscated typesetting layer is difficult to troubleshoot. Plain text ensures transparency and answers to the standards of long-term preservation. MS Word may go the way of Word Perfect in the future, but plain text will always remain easy to read, catalog, mine, and transform. As an additional feature, plain text enables easy and powerful versioning of the document. 
 
@@ -39,7 +44,7 @@ You will need to following software installed on your computer:
 
 * A **plain text editor**. For beginners, we recommend [Text Wrangler](http://www.barebones.com/products/textwrangler/) on a Mac, [Notepad++](http://notepad-plus-plus.org/) for Windows, and [gEdit](https://projects.gnome.org/gedit/) for Linux. More advanced users may want to experiment with flavors of Emacs of Vim. It does not matter what you use as long as it is explicitly a plain text editor. 
 
-* **Pandoc** (detailed, platform-specific installation instructions [available here](http://johnmacfarlane.net/pandoc/installing.html)). Pandoc was created and is maintained by John MacFarlane at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents.
+* **Pandoc** (detailed, platform-specific installation instructions [available here](http://johnmacfarlane.net/pandoc/installing.html)). Pandoc was created and is maintained by John MacFarlane at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents. To verify that Pandoc is installed, enter ```pandoc --version``` into the command line.
 
 * **LaTeX** (detailed, platform-specific installation instructions [available here](http://johnmacfarlane.net/pandoc/installing.html)). Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf.
 
@@ -51,29 +56,33 @@ To begin, create a folder into which you will save all of your projects. Open a 
 
 ```
 ---
-title: Good Thesis, or Best Thesis?
-author: Grant Wythoff
+title: Plain Text Workflow 
+author: |
+	Dennis Tenen\
+	Grant Wythoff
 date: November 4, 2013
 ...
 
-# Introduction
+# Philosophy 
+Authoring, storing, and retrieving documents are *central* to the humanities research workflow.^[This point is clarified here.] 
 
-This is an argument that *probably* needs some evidence.^[More evidence here.]
+And yet, many scholars base their practice on [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) and formats.
 
-## Background
+## Principles
 
-Even **more** [text](http://google.com).
+- **Preference for Plain Text** and human readable formats.
+- **Platform Independence** means share, edit, and write in any environment.
 
-# Conclusion
+# Use Cases
 
-In this thesis, I have proven the following.
+In this tutorial, you will learn the following.
 ```
 
 At the top, nested between lines containing --- and ... you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
 
-A hashtag signals a header (# Introduction) while a double hashtag signals a subheader (## Background).  Italic text is encased in ```*single*``` asterisks, while bold text is signaled by ```**two**``` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
+A hashtag signals a header (```# Introduction```) while a double hashtag signals a subheader (```## Background```).  Italic text is encased in ```*single*``` asterisks, while bold text is signaled by ```**two**``` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
 
-Save this file, and navigate to the directory containing it in your Terminal (here are some step-by-step instructions for those new to command line navigation).  At the command prompt for your project directory, type:
+Save this file, and navigate to the directory containing it in your Terminal ([here](http://johnmacfarlane.net/pandoc/getting-started.html) are some step-by-step instructions for those new to command line navigation).  At the command prompt for your project directory, type:
 
 ```
 pandoc -o project.pdf project.md
@@ -84,6 +93,10 @@ This command uses Pandoc to output (-o) a PDF filename of your choice, based on 
 ```
 pandoc -o project.pdf --number-sections --toc project.md
 ```
+
+If everything has gone smoothly, you will now have a PDF file in your project folder that looks like this:
+
+![](PDFoutput1.png)
 
 # Case 2: Working with Bibliographies
 
