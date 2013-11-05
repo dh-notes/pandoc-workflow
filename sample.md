@@ -47,7 +47,17 @@ You will need to following software installed on your computer:
 
 In this scenario, we will create a Markdown file and use Pandoc to publish that text in a formatted PDF. The basics of Markdown syntax [are available here](http://daringfireball.net/projects/markdown/syntax), and you can test it out using [this online dingus](http://daringfireball.net/projects/markdown/dingus). But what follows will cover everything required for a basic humanities document.
 
-To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md". 
+To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md". In this file, type the following:
+
+```
+---
+title: Good Thesis, or Best Thesis?
+author: Grant Wythoff
+date: November 4, 2013
+...
+```
+
+This is your YAML metadata header.  
 
 # Case 2: Working with Bibliographies
 
