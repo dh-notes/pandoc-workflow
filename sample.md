@@ -55,9 +55,35 @@ title: Good Thesis, or Best Thesis?
 author: Grant Wythoff
 date: November 4, 2013
 ...
+
+# Introduction
+
+This is an argument that *probably* needs some evidence.^[More evidence here.]
+
+## Background
+
+Even **more** [text](http://google.com).
+
+# Conclusion
+
+In this thesis, I have proven the following.
 ```
 
-This is your YAML metadata header.  
+At the top, nested between lines containing --- and ... you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
+
+A hashtag signals a header (# Introduction) while a double hashtag signals a subheader (## Background).  Italic text is encased in *single* asterisks, while bold text is signaled by **two** asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
+
+Save this file, and navigate to the directory containing it in your Terminal (here are some step-by-step instructions for those new to command line navigation).  At the command prompt for your project directory, type:
+
+```
+pandoc -o project.pdf project.md
+```
+
+This command uses Pandoc to output (-o) a PDF filename of your choice, based on your Markdown file.  In order to number your section headers, include ```--number-sections``` and to include a table of contents at the top of the document, include ```--toc``` in your command, directly after the PDF file you have named.  Thus, the new command would look like this:
+
+```
+pandoc -o project.pdf --number-sections --toc project.md
+```
 
 # Case 2: Working with Bibliographies
 
