@@ -57,8 +57,8 @@ To begin, create a folder into which you will save all of your projects. Open a 
 ---
 title: Plain Text Workflow 
 author: |
-	Dennis Tenen\
-	Grant Wythoff
+    Dennis Tenen\
+    Grant Wythoff
 date: November 4, 2013
 ...
 
