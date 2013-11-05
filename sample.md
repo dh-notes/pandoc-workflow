@@ -45,7 +45,9 @@ You will need to following software installed on your computer:
 
 # Case 1: Markdown basics
 
-In this scenario, we will create a markdown file, 
+In this scenario, we will create a Markdown file and use Pandoc to publish that text in a formatted PDF. The basics of Markdown syntax [are available here](http://daringfireball.net/projects/markdown/syntax), and you can test it out using [this online dingus](http://daringfireball.net/projects/markdown/dingus). But what follows will cover everything required for a basic humanities document.
+
+To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md". 
 
 # Case 2: Working with Bibliographies
 
