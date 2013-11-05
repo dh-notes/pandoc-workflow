@@ -81,7 +81,7 @@ At the top, nested between lines containing --- and ... you have a YAML metadata
 
 A hashtag signals a header (```# Introduction```) while a double hashtag signals a subheader (```## Background```).  Italic text is encased in ```*single*``` asterisks, while bold text is signaled by ```**two**``` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
 
-Save this file, and navigate to the directory containing it in your Terminal ([here](http://johnmacfarlane.net/pandoc/getting-started.html) are some step-by-step instructions for those new to command line navigation).  At the command prompt for your project directory, type:
+Save this file, and navigate to the directory containing it in your Terminal. If you are unfamiliar using the command line, the Scholars' Lab [Command Line Bootcamp](http://praxis.scholarslab.org/tutorials/bash/) will prove useful.  At the command prompt for your project directory, type:
 
 ```
 pandoc -o project.pdf project.md
