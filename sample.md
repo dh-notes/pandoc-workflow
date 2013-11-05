@@ -65,7 +65,7 @@ date: November 4, 2013
 # Philosophy 
 Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
 
-But many scholars work with [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) tools.
+But many scholars work with [proprietary](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) tools.
 
 ## Principles
 
@@ -99,7 +99,7 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will
+In this scenario, we will use Zotero to export our bibliographic references as Bibtex files.
 
 # Case 3: Slides 
 
