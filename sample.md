@@ -98,7 +98,11 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will use Zotero to export our bibliographic references as Bibtex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [Bibtex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [autozotbib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
+In this scenario, we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [autozotbib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
+
+Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project.
+
+If you open this .bib file, you will see that every citation has a cite key.  The default cite key exported by Zotero takes on the form @foucault_
 
 # Case 3: Slides 
 
