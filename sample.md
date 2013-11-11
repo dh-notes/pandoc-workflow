@@ -99,8 +99,8 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will use Zotero to export our bibliographic references as Bibtex files.
+In this scenario, we will use Zotero to export our bibliographic references as Bibtex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [Bibtex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [autozotbib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
 
 # Case 3: Slides 
 
-In this scenario, we will
+In this scenario, we will 
