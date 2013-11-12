@@ -102,7 +102,27 @@ In this scenario, we will use Zotero to export our bibliographic references as B
 
 Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project.
 
-If you open this .bib file, you will see that every citation has a cite key.  The default cite key exported by Zotero takes on the form @foucault_
+If you open this .bib file, 
+
+```
+@article{gratzinger_was_2011,
+	title = {Was the Telescope Obvious? An Inquiry into Simultaneous Invention},
+	volume = {13},
+	shorttitle = {Was the Telescope Obvious?},
+	url = {http://academiccommons.columbia.edu/catalog/ac:146524},
+	abstract = {History is full of inventions that multiple people appear to have arrived at independently at about the same time…},
+	number = {1},
+	urldate = {2013-10-22},
+	journal = {Columbia Science and Technology Law Review},
+	author = {Gratzinger, Peter},
+	year = {2011},
+	keywords = {Intellectual property},
+	pages = {71--96},
+	file = {Gratzinger_2011_Was_the_Telescope_Obvious_-_An_Inquiry_into_Simultaneous_Invention.pdf}
+},
+```
+
+Each entry contains a unique cite key, which will be the first item listed. The default cite key exported by Zotero takes on the form "gratzinger_was_2011," being the primary author's last name, first word in the title, and year.
 
 # Case 3: Slides 
 
