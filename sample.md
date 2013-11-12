@@ -58,7 +58,6 @@ To begin, create a folder into which you will save all of your projects. Open a 
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
-
 ---
 
 # Philosophy 
@@ -98,11 +97,11 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [autozotbib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
+In this scenario, we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
 
-Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project.
+Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project. Let's call it "project.bib" for simplicity's sake.
 
-If you open this .bib file, 
+If you open this project.bib file with your plain text editor, you will see a list of items in the following format:
 
 ```
 @article{gratzinger_was_2011,
@@ -122,7 +121,20 @@ If you open this .bib file,
 },
 ```
 
-Each entry contains a unique cite key, which will be the first item listed. The default cite key exported by Zotero takes on the form "gratzinger_was_2011," being the primary author's last name, first word in the title, and year.
+Each entry contains a unique cite key, which is listed in the first row of text for each item. The default cite key exported by Zotero takes on the form "gratzinger_was_2011," being the primary author's last name, first word in the title, and year separated by underscores.^[Again, the only good solution for editing this default cite key export format is the [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin. For the moment, however, it only lets you export your *entire* Zotero library, rather than an individual collection.]
+
+Go back to your project.md file. In order for Pandoc to match your cite keys with full citation data, you will have to edit your metadata header so that it points to your BibTeX file.  Edit the header so that it now reads:
+
+```
+---
+title: Plain Text Workflow 
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+bibliography: project.bib
+---
+```
+
+Now you can quickly type a cite key into your project, and upon typesetting that key will be replaced by a full citation.
 
 # Case 3: Slides 
 
