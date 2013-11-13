@@ -162,9 +162,19 @@ In this tutorial, you will learn the following.
 # Bibliography
 ```
 
-Now, to compiling. The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>. All available CSL styles can be searched and downloaded at <https://github.com/citation-style-language/styles>.]
+The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>. All available CSL styles can be searched and downloaded at <https://github.com/citation-style-language/styles>.]
 
-```csl: mla.csl```
+Once the .csl file of your choice is downloaded into your directory, reference it in the YAML header in the same manner as your bibliography: ```csl: mla.csl```
+
+Now, to compiling. In your terminal, type:
+
+```pandoc -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt```
+
+We have simply added ```--filter pandoc-citeproc``` to our last compile command, which will format all of our citations.
+
+To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, saved with a .sty extension) saved in the same directory, and referenced in your typesetting command:
+
+```pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt``` 
 
 # Case 3: Slides 
 
