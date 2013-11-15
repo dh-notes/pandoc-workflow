@@ -52,7 +52,7 @@ Modern operating systems are designed to obscure the file structure on your hard
 
 The next command is ```ls``` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type ```cd DIRECTORY_NAME``` to change directories. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
 
-These three commands: ```pwd``` ```ls``` and ```cd``` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
+These three commands: ```pwd``` ,  ```ls``` ,  and ```cd``` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
 
 You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. 
 
