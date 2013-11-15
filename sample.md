@@ -69,6 +69,12 @@ Markdown conventions come in several "flavors"
 To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md". In this file, type the following:
 
 ```
+---
+title: Plain Text Workflow 
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+---
+
 # Philosophy 
 Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
 
