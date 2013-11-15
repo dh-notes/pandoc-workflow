@@ -52,11 +52,10 @@ Modern operating systems are designed to obscure the file structure on your hard
 
 The next command is ```ls``` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type ```cd DIRECTORY_NAME``` to change directories. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
 
-These three commands: ```pwd```,  ```ls``` ,  and ```cd``` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
+These three commands: ```pwd```,  ```ls```,  and ```cd``` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
 
 You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. 
 
-If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community. 
 
 # Case 1: Markdown basics
 In this scenario, we will create a Markdown file and use Pandoc to publish that text in a formatted PDF.
@@ -114,6 +113,8 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 # Case 2: Working with Bibliographies
 
 In this scenario, we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
+
+If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Most modern reference managers are able to export bibliographies in BibTeX (.bib) format, which, being plain text and human-readible, complies with our stated principles. We will return to bibliographies in Case 2 of the tutorial.
 
 Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project. Let's call it "project.bib" for simplicity's sake.
 
