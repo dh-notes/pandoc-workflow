@@ -1,8 +1,7 @@
 ---
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-...
+title:  Plain Text Workflow 
+author:  Dennis Tenen, Grant Wythoff
+date:  November 4, 2013
 ---
 
 # Philosophy 
@@ -108,8 +107,6 @@ pandoc -o project.pdf --number-sections --toc project.md
 ```
 
 If everything has gone smoothly, you will now have a PDF file in your project folder that looks like this:
-
-![](PDFoutput1.png)
 
 # Case 2: Working with Bibliographies
 
