@@ -48,17 +48,17 @@ You will need to following software installed on your computer:
 
 * **Unix terminal emulator**. Working "in the command line" is equivalent to typing commands into the terminal. On a Mac you simply need to use your finder for "terminal". On windows, you may need to install TERMINAL ON WINDOWS. Linux users are likely to be familiar with their terminals already.
 
-* **Pandoc**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Pandoc was created and is maintained by John MacFarlane, Professor of Philosophy at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents. To verify that Pandoc is installed, enter ```pandoc --version``` into the command line.
+* **Pandoc**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Pandoc was created and is maintained by John MacFarlane, Professor of Philosophy at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents. To verify that Pandoc is installed, enter `pandoc --version` into the command line.
 
-* **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Type ```latex -v``` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
+* **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
 
 # Folder Structure
 
-Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: ```[~]$```. The tilde indicates your "home" directory,^[In fact you can type ```cd ~``` at any point to return to your home directory, while ```/``` indicates the root, or the top-most directory on your drive.] and the dollar sign is just a prompt for you to type something. It is very likely that your "Documents" folder is located here. Type ```pwd``` and then hit enter to list the full name of your working directory. Use ```pwd``` whenever you feel lost in the command prompt.
+Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `[~]$`. The tilde indicates your "home" directory,^[In fact you can type `cd ~` at any point to return to your home directory, while `/` indicates the root, or the top-most directory on your drive.] and the dollar sign is just a prompt for you to type something. It is very likely that your "Documents" folder is located here. Type `pwd` and then hit enter to list the full name of your working directory. Use `pwd` whenever you feel lost in the command prompt.
 
-The next command is ```ls``` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type ```cd DIRECTORY_NAME``` to change directories. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
+The next command is `ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `cd DIRECTORY_NAME` to change directories. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
 
-These three commands: ```pwd```,  ```ls```,  and ```cd``` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
+These three commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
 
 You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. 
 
@@ -73,7 +73,7 @@ Markdown conventions come in several "flavors" designed for use in particular co
 
 To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md" in this folder. In this file, type the following:
 
-```
+`
 ---
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
@@ -94,29 +94,29 @@ But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
 # Use Cases
 
 In this tutorial, you will learn the following.
-```
+`
 
-At the top, nested between lines containing ```---``` and ```---``` you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
+At the top, nested between lines containing `---` and `---` you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
 
-A hashtag signals a header (```# Introduction```) while a double hashtag signals a subheader (```## Background```).  Italic text is encased in ```*single*``` asterisks, while bold text is signaled by ```**two**``` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
+A hashtag signals a header (`# Introduction`) while a double hashtag signals a subheader (`## Background`).  Italic text is encased in `*single*` asterisks, while bold text is signaled by `**two**` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
 
 Save this file, and navigate to the directory containing it in your Terminal. If you are unfamiliar using the command line, the Scholars' Lab [Command Line Bootcamp](http://praxis.scholarslab.org/tutorials/bash/) will prove useful.  At the command prompt for your project directory, type:
 
-```
+`
 pandoc -o project.pdf project.md
-```
+`
 
-This command uses Pandoc to output (-o) a PDF filename of your choice, based on your Markdown file.  In order to automatically number your section headers, include ```--number-sections``` and to include a table of contents at the top of the document, include ```--toc``` in your command, directly after the PDF file you have named.  Thus, the new command would look like this:
+This command uses Pandoc to output (-o) a PDF filename of your choice, based on your Markdown file.  In order to automatically number your section headers, include `--number-sections` and to include a table of contents at the top of the document, include `--toc` in your command, directly after the PDF file you have named.  Thus, the new command would look like this:
 
-```
+`
 pandoc -o project.pdf --number-sections --toc project.md
-```
+`
 
 If everything has gone smoothly, you will now have a PDF file in your project folder that looks like this:
 
 To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, with a .sty extension) saved in the same directory, and referenced in your typesetting command:
 
-```pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt```
+`pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
 
 # Case 2: Working with Bibliographies
 
@@ -126,11 +126,11 @@ In this scenario, we will include figures, properly formatted citations, and exp
 
 Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown.  Simply save the image you would like to use to your project directory.  Then, in project.md, you can include this image by referencing it as follows:
 
-```![A horse.](horse.jpg)```
+`![A horse.](horse.jpg)`
 
 An exclamation mark signals that this file is an image.  Your caption will automatically be placed beneath the image and numbered as "Fig. 1" (a feature available in conversion to PDF only. Figures will not be numbered in .docx).  If you would like to keep all of your images in their own folder within your project directory, you can reference this subfolder in your filename.
 
-```![A horse.](images/horse.jpg)```
+`![A horse.](images/horse.jpg)`
 
 ## Including Citations
 
@@ -142,7 +142,7 @@ Open Zotero (standalone or Firefox plugin version) and navigate to the folder co
 
 If you open this project.bib file with your plain text editor, you will see a list of items in the following format:
 
-```
+`
 @article{fyfe_digital_2011,
 	title = {Digital Pedagogy Unplugged},
 	volume = {5},
@@ -153,30 +153,30 @@ If you open this project.bib file with your plain text editor, you will see a li
 	year = {2011},
 	file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
 }
-```
+`
 
 Each entry contains a unique cite key, which is listed in the first row of text for each item. The default cite key exported by Zotero takes on the form "@fyfe_digital_2011," being the primary author's last name, first word in the title, and year separated by underscores.^[Again, the only good solution for editing this default cite key export format is the [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin. For the moment, however, it only lets you export your *entire* Zotero library, rather than an individual collection.]
 
 Go back to your project.md file. In order for Pandoc to match your cite keys with full citation data, you will have to edit your metadata header so that it points to your BibTeX file.  Edit the header so that it now reads:
 
-```
+`
 ---
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
 bibliography: project.bib
 ---
-```
+`
 
 Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of our project.md file to look as follows.
 
-```
+`
 central activities.^[@fyfe_digital_2011 argues that too.]
-```
+`
 
 Your sentence will now be followed by an automatically numbered footnote, which contains the text "Fyfe argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
 
-```
+`
 ---
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
@@ -202,15 +202,15 @@ But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
 In this tutorial, you will learn the following.
 
 # Bibliography
-```
+`
 
 The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>.]
 
-We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file ```modern-language-association.csl``` to your project directory.
+We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file `modern-language-association.csl` to your project directory.
 
 Finally, reference that citation style in the YAML header in the same manner as your bibliography:
 
-```
+`
 ---
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
@@ -218,7 +218,7 @@ date: November 4, 2013
 bibliography: project.bib
 csl: modern-language-association.csl
 ---
-```
+`
 
 Now, when you compile, your references will be typeset in MLA format.
 
@@ -226,9 +226,9 @@ Now, when you compile, your references will be typeset in MLA format.
 
 This time, rather than producing a PDF, we will create a .docx file compatible with Microsoft Word.  In your terminal, type:
 
-```pandoc -o project.docx --filter pandoc-citeproc --number-sections --toc project.md```
+`pandoc -o project.docx --filter pandoc-citeproc --number-sections --toc project.md`
 
-Two elements have changed in our compile command.  First, we have named ```project.docx``` as the output (i.e., a Microsoft Word file).  Second, we have added ```--filter pandoc-citeproc```, which will format all of our citations.
+Two elements have changed in our compile command.  First, we have named `project.docx` as the output (i.e., a Microsoft Word file).  Second, we have added `--filter pandoc-citeproc`, which will format all of our citations.
 
 # Case 3: Slides 
 
@@ -236,11 +236,11 @@ In this scenario, we will use the same Pandoc Markup plain text language to prod
 
 In order to begin using reveal.js, you must save the "css," "js," and "lib" folders to your project directory available at the [reveal.js GitHub project page](https://github.com/hakimel/reveal.js/).  These folders contain all of the different layout, theme, and transition possibilities.
 
-Next, you will need an HTML template that defines how your plain text file will be rendered as a slide deck in a web browser.  We have been using one written by Aaron Wolen and [available on GitHub](https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html).  Download this file, named ```template-revealjs.html```, and save it to your project directory.
+Next, you will need an HTML template that defines how Pandoc will be render your plain text file as a slide deck in a web browser.  We have been using one written by Aaron Wolen and [available on GitHub](https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html).  Download this file, named `template-revealjs.html`, and save it to your project directory.
 
 Now, create a new text file and name it project-slides.md, saving it to your project directory.  In this file, type the following:
 
-```
+`
 ---
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
@@ -270,12 +270,14 @@ More slide text.
 # ![](images/image4.jpg)
 
 Text beneath image.
-```
+`
 
-In this file, your YAML metadata header will serve as the first slide.  Each subsequent side is marked off by a single hashtag.  So, the first slide after your title will contain an image with the filename ```image1.jpg``` that you have saved in your project's image folder.  The following slide will contain some text.  The next slide will contain a header text, and the several subsequent images under that subheader.  Reveal.js javascript allows you to graphically scroll down (rather than to the right) for each subheader slide.
+In this file, your YAML metadata header will serve as the first slide.  Each subsequent side is marked off by a single hashtag.  So, the first slide after your title will contain an image with the filename `image1.jpg` that you have saved in your project's image folder.  The following slide will contain some text.  The next slide will contain a header text, and the several subsequent images under that subheader.  Reveal.js javascript allows you to graphically scroll down (rather than to the right) for each subheader slide.
   
 In order to compile your slides, navigate to your directory and run the following command:
 
-`pandoc -t html5 -s --template=template.revealjs.html --standalone --section-divs -o slides.html slides.md`
+`pandoc -t html5 -s --template=template.revealjs.html --standalone --section-divs -o slides.html project_slides.md`
 
-The theme ("sky" above) can be changed to any of the options [listed here](lab.hakim.se/reveal-js/#/themes) by adding ```--variable theme="sky"```, for instance, directly before ```-o``` in your command.  Transitions can be modified by adding ```--variable transition="zoom"``` or any of the other options [listed here](http://lab.hakim.se/reveal-js/#/transitions).
+The theme ("sky" above) can be changed to any of the options [listed here](lab.hakim.se/reveal-js/#/themes) by adding `--variable theme="sky"`, for instance, directly before `-o` in your command.  Transitions can be modified by adding `--variable transition="zoom"` or any of the other options [listed here](http://lab.hakim.se/reveal-js/#/transitions).
+
+The resulting file, `slides.html`, can be opened with your web browser and shown as a presentation from there.  Reveal.js allows you to hit the "esc" key in order to get a bird's eye view of your entire presentaiton, and the "period" key to temporarily make the screen go blank for emphasis during your presentation.
