@@ -116,7 +116,21 @@ If everything has gone smoothly, you will now have a PDF file in your project fo
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
+In this scenario, we will include figures, properly formatted citations, and export a Microsoft Word compatible file.
+
+## Including Illustrations
+
+Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown.  Simply save the image you would like to use to your project directory.  Then, in project.md, you can include this image by referencing it as follows:
+
+```![A horse.](horse.jpg)```
+
+An exclamation mark signals that this file is an image.  Your caption will automatically be placed beneath the image and numbered as "Fig. 1".  If you would like to keep all of your images in their own folder within your project directory, you can reference this subfolder in your filename.
+
+```![A horse.](images/horse.jpg)```
+
+## Including Citations
+
+Next we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
 
 If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Most modern reference managers are able to export bibliographies in BibTeX (.bib) format, which, being plain text and human-readible, complies with our stated principles. We will return to bibliographies in Case 2 of the tutorial.
 
@@ -156,7 +170,7 @@ Now you can quickly type a cite key into your project, and upon "typesetting" yo
 central activities.^[@fyfe_digital_2011 argues that too.]
 ```
 
-Here, the text "central activities." will be followed by an automatically numbered footnote, which contains the text "Gratzinger argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
+Your sentence will now be followed by an automatically numbered footnote, which contains the text "Fyfe argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
 
 ```
 ---
@@ -172,6 +186,8 @@ Authoring, storing, and retrieving are *central* activities.^[@fyfe_digital_2011
 
 But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
 
+![A horse.](horse.jpg)
+
 ## Principles
 
 - **Preference for Plain Text** and human readable formats.
@@ -186,13 +202,29 @@ In this tutorial, you will learn the following.
 
 The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>. All available CSL styles can be searched and downloaded at <https://github.com/citation-style-language/styles>.]
 
-Once the .csl file of your choice is downloaded into your directory, reference it in the YAML header in the same manner as your bibliography: ```csl: mla.csl```
+We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found [in a GitHub repository](https://github.com/citation-style-language/styles).  Scroll down to find the file ```modern-language-association.csl```.  Right click on this file and save it to your project directory.
 
-Now, to compiling. In your terminal, type:
+Finally reference that citation style in the YAML header in the same manner as your bibliography:
 
-```pandoc -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt```
+```
+---
+title: Plain Text Workflow 
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+bibliography: project.bib
+csl: modern-language-association.csl
+---
+```
 
-We have simply added ```--filter pandoc-citeproc``` to our last compile command, which will format all of our citations.
+Now, when you compile, your references will be typeset in MLA format.
+
+## Typesetting for Word Documents
+
+This time, rather than producing a PDF, we will create a .docx file compatible with Microsoft Word.  In your terminal, type:
+
+```pandoc -o project.docx --filter pandoc-citeproc --number-sections --toc project.md```
+
+Two elements have changed in our compile command.  First, we have named ```project.docx``` as the output (i.e., a Microsoft Word file).  Second, we have added ```--filter pandoc-citeproc```, which will format all of our citations.
 
 To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, saved with a .sty extension) saved in the same directory, and referenced in your typesetting command:
 
