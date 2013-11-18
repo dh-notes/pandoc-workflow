@@ -232,4 +232,51 @@ Two elements have changed in our compile command.  First, we have named ```proje
 
 # Case 3: Slides 
 
-In this scenario, we will 
+In this scenario, we will use the same Pandoc Markup plain text language to produce a slide deck that can be viewed in any desktop or mobile web browser.  Several options are available to produce HTML slides, including DZ Slides, Beamer, and Slidy.  A full overview of slide show formats, are available at the Pandoc readme page.^[<http://johnmacfarlane.net/pandoc/README.html#producing-slide-shows-with-pandoc>]  We will be working with reveal.js.  Reveal.js is a CSS and JavaScript framework for creating beautiful presentations in HTML5, designed by [Hakim El Hattab](http://hakim.se/).
+
+In order to begin using reveal.js, you must save the "css," "js," and "lib" folders to your project directory available at the [reveal.js GitHub project page](https://github.com/hakimel/reveal.js/).  These folders contain all of the different layout, theme, and transition possibilities.
+
+Next, you will need an HTML template that defines how your plain text file will be rendered as a slide deck in a web browser.  We have been using one written by Aaron Wolen and [available on GitHub](https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html).  Download this file, named ```template-revealjs.html``` and save it to your project directory.
+
+Now, create a new text file and name it project-slides.md, saving it to your project directory.  In this file, type the following:
+
+```
+---
+title: Plain Text Workflow 
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+---
+
+# ![](images/image1.jpg)
+
+#
+
+Text on a slide.
+
+# 
+
+Header Text
+
+## ![](images/image2.jpg)
+
+## ![](images/image3.jpg)
+
+##
+
+Slide text.
+
+More slide text.
+
+# ![](images/image4.jpg)
+
+Text beneath image.
+```
+
+In this file, your YAML metadata header will serve as the first slide.  Each subsequent side is marked off by a single hashtag.  So, the first slide after your title will contain an image with the filename ```image1.jpg``` that you have saved in your project's image folder.  The following slide will contain some text.  The next slide will contain a header text, and the several subsequent images under that subheader.  Reveal.js javascript allows you to graphically scroll down (rather than to the right) for each subheader slide.
+  
+In order to compile your slides:
+
+- Navigate to your directory and run the following command:
+  - `pandoc -t html5 -s --template=template.revealjs.html --standalone --section-divs -o slides.html slides.md`
+  - the theme ("sky" above) can be changed to any of the options [listed here](lab.hakim.se/reveal-js/#/themes) by adding ```--variable theme="sky"```, for instance, directly before ```-o``` in your command.
+  - transitions can be modified by adding ```--variable transition="zoom"``` or any of the other options [listed here](http://lab.hakim.se/reveal-js/#/transitions).
