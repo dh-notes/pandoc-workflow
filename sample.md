@@ -114,6 +114,10 @@ pandoc -o project.pdf --number-sections --toc project.md
 
 If everything has gone smoothly, you will now have a PDF file in your project folder that looks like this:
 
+To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, with a .sty extension) saved in the same directory, and referenced in your typesetting command:
+
+```pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt```
+
 # Case 2: Working with Bibliographies
 
 In this scenario, we will include figures, properly formatted citations, and export a Microsoft Word compatible file.
@@ -124,7 +128,7 @@ Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown.  Sim
 
 ```![A horse.](horse.jpg)```
 
-An exclamation mark signals that this file is an image.  Your caption will automatically be placed beneath the image and numbered as "Fig. 1".  If you would like to keep all of your images in their own folder within your project directory, you can reference this subfolder in your filename.
+An exclamation mark signals that this file is an image.  Your caption will automatically be placed beneath the image and numbered as "Fig. 1" (a feature available in conversion to PDF only. Figures will not be numbered in .docx).  If you would like to keep all of your images in their own folder within your project directory, you can reference this subfolder in your filename.
 
 ```![A horse.](images/horse.jpg)```
 
@@ -200,11 +204,11 @@ In this tutorial, you will learn the following.
 # Bibliography
 ```
 
-The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>. All available CSL styles can be searched and downloaded at <https://github.com/citation-style-language/styles>.]
+The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>.]
 
-We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found [in a GitHub repository](https://github.com/citation-style-language/styles).  Scroll down to find the file ```modern-language-association.csl```.  Right click on this file and save it to your project directory.
+We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file ```modern-language-association.csl``` to your project directory.
 
-Finally reference that citation style in the YAML header in the same manner as your bibliography:
+Finally, reference that citation style in the YAML header in the same manner as your bibliography:
 
 ```
 ---
@@ -225,10 +229,6 @@ This time, rather than producing a PDF, we will create a .docx file compatible w
 ```pandoc -o project.docx --filter pandoc-citeproc --number-sections --toc project.md```
 
 Two elements have changed in our compile command.  First, we have named ```project.docx``` as the output (i.e., a Microsoft Word file).  Second, we have added ```--filter pandoc-citeproc```, which will format all of our citations.
-
-To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, saved with a .sty extension) saved in the same directory, and referenced in your typesetting command:
-
-```pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt``` 
 
 # Case 3: Slides 
 
