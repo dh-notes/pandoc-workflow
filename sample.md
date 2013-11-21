@@ -1,7 +1,8 @@
 ---
-title:  Plain Text Workflow 
-author:  Dennis Tenen, Grant Wythoff
-date:  November 4, 2013
+title: Plain Text Workflow 
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+tags: tutorial, plain text
 ---
 
 # Philosophy 
