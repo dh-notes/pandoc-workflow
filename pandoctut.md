@@ -79,7 +79,15 @@ Let's now create a simple document. Open the plain-text editor of your choice an
 % November 4, 2013
 ```
 
-At the top, nested between lines containing `---` and `---` you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
+Suppose this our document contains three sections, each subdivided into two subsections. Leave a blank line after the date and type something like this:  
+
+```
+# Section 1
+## Subsection 1.1
+## Subsection 1.2
+# Section 2
+# Section 3
+```
 
 A hashtag signals a header (`# Introduction`) while a double hashtag signals a subheader (`## Background`).  Italic text is encased in `*single*` asterisks, while bold text is signaled by `**two**` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
 
