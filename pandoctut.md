@@ -89,12 +89,9 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-A hashtag signals a header (`# Introduction`) while a double hashtag signals a subheader (`## Background`).  Italic text is encased in `*single*` asterisks, while bold text is signaled by `**two**` asterisks. A carat and brackets contains text that will be included as a footnote, and hyperlinks can be made by putting the text to be linked in brackets and the URL directly next to it in parentheses.
+Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. 
 
-Save this file, and navigate to the directory containing it in your Terminal. If you are unfamiliar using the command line, the Scholars' Lab [Command Line Bootcamp](http://praxis.scholarslab.org/tutorials/bash/) will prove useful.  At the command prompt for your project directory, type:
-
-`
-pandoc -o project.pdf project.md
+ -o project.pdf project.md
 `
 
 This command uses Pandoc to output (-o) a PDF filename of your choice, based on your Markdown file.  In order to automatically number your section headers, include `--number-sections` and to include a table of contents at the top of the document, include `--toc` in your command, directly after the PDF file you have named.  Thus, the new command would look like this:
@@ -167,34 +164,6 @@ central activities.^[@fyfe_digital_2011 argues that too.]
 
 Your sentence will now be followed by an automatically numbered footnote, which contains the text "Fyfe argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
 
-`
----
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-bibliography: project.bib
----
-
-# Philosophy 
-
-Authoring, storing, and retrieving are *central* activities.^[@fyfe_digital_2011 argues that too.]
-
-But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
-
-![A horse.](horse.jpg)
-
-## Principles
-
-- **Preference for Plain Text** and human readable formats.
-- **Platform Independence** means share and edit in any environment.
-
-# Use Cases
-
-In this tutorial, you will learn the following.
-
-# Bibliography
-`
-
 The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>.]
 
 We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file `modern-language-association.csl` to your project directory.
@@ -231,37 +200,15 @@ Next, you will need an HTML template that defines how Pandoc will be render your
 
 Now, create a new text file and name it project-slides.md, saving it to your project directory.  In this file, type the following:
 
-`
----
+```
 title: Plain Text Workflow 
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
----
-
-# ![](images/image1.jpg)
-
-#
-
-Text on a slide.
-
-# 
-
-Header Text
-
-## ![](images/image2.jpg)
-
-## ![](images/image3.jpg)
-
-##
-
-Slide text.
-
-More slide text.
 
 # ![](images/image4.jpg)
 
 Text beneath image.
-`
+```
 
 In this file, your YAML metadata header will serve as the first slide.  Each subsequent side is marked off by a single hashtag.  So, the first slide after your title will contain an image with the filename `image1.jpg` that you have saved in your project's image folder.  The following slide will contain some text.  The next slide will contain a header text, and the several subsequent images under that subheader.  Reveal.js javascript allows you to graphically scroll down (rather than to the right) for each subheader slide.
   
