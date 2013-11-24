@@ -23,7 +23,7 @@ In this tutorial, we would like to suggest an alternative workflow built around 
 
 5. *One source many destinations.* As the vectors of publication multiply, we need to be able to generate a multiplicity of formats including for slide projection, print, web, and mobile. Ideally, we would like to be able to generate most common formats without breaking bibliographic dependencies. Our workflow needs to be portable as well--it would be nice to be able to copy a folder to a thumbdrive and know that it contains everything needed for publication.
 
-Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .doc and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
+Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .docx and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
 
 # Use cases
 
@@ -45,57 +45,39 @@ Instead of following the tutorial in a mechanical way, you should strive to unde
 
 You will need to following software installed on your computer:
 
-* A **plain text editor**. For beginners, we recommend Text Wrangler on a Mac, Notepad++ for Windows, and gEdit for Linux. More advanced users may want to experiment with flavors of Emacs of Vim. It does not matter what you use as long as it is explicitly a plain text editor.
+* A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor. 
 
-* **Unix terminal emulator**. Working "in the command line" is equivalent to typing commands into the terminal. On a Mac you simply need to use your finder for "terminal". On windows, you may need to install TERMINAL ON WINDOWS. Linux users are likely to be familiar with their terminals already.
+* **Unix terminal emulator**. Working "in the command line" is equivalent to typing commands into the terminal. On a Mac you simply need to use your finder for "Terminal". On Windows, use PowerShell. Linux users are likely to be familiar with their terminals already.
 
 * **Pandoc**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Pandoc was created and is maintained by John MacFarlane, Professor of Philosophy at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents. To verify that Pandoc is installed, enter `pandoc --version` into the command line.
 
 * **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
 
-# Folder Structure
+# Getting in touch with your inner terminal
 
 Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `[~]$`. The tilde indicates your "home" directory,^[In fact you can type `cd ~` at any point to return to your home directory, while `/` indicates the root, or the top-most directory on your drive.] and the dollar sign is just a prompt for you to type something. It is very likely that your "Documents" folder is located here. Type `pwd` and then hit enter to list the full name of your working directory. Use `pwd` whenever you feel lost in the command prompt.
 
-The next command is `ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `cd DIRECTORY_NAME` to change directories. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
+The next command is `ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `cd DIRECTORY_NAME` to change directory and `cd ..` to go back up the folder structure. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
 
-These three commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through ^[TERMINAL THE HARD WAY].
+These three commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
 
 You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. 
 
 # Case 1: Markdown basics
 
-In this scenario, we will create a Markdown file and use Pandoc to publish that text in a formatted PDF.
+In this scenario, we will create a Markdown file and use Pandoc to convert into an MS Word document. 
 
-Markdown is a convention for structuring your plain-text documents semantically. The idea is to identify logical structures in your document (title, section, subsection, footnote, etc.), 
-mark them with some unobtrusive characters, and then "compile" the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. 
+Markdown is a convention for structuring your plain-text documents semantically. The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then "compile" the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. 
 
-Markdown conventions come in several "flavors" designed for use in particular contexts, such as GitHub.  Pandoc is one such flavor of Markdown.
+Markdown conventions come in several "flavors" designed for use in particular contexts, such as GitHub. Pandoc is one such flavor of Markdown, and its conventions are described one the "Pandoc's Markdown" page on John MacFarlane's website.^[<http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html>]
 
-To begin, create a folder into which you will save all of your projects. Open a new file using your plain text editor and save it as "project.md" in this folder. In this file, type the following:
+Let's now create a simple document. Open the plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:  
 
-`
----
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-...
-
-# Philosophy 
-
-Authoring, storing, and retrieving are *central* activities.^[Clarified here.] 
-
-But many scholars work with [proprietary](http://bit.ly/HDjFBs) tools.
-
-## Principles
-
-- **Preference for Plain Text** and human readable formats.
-- **Platform Independence** means share and edit in any environment.
-
-# Use Cases
-
-In this tutorial, you will learn the following.
-`
+```
+% Plain Text Workflow 
+% Dennis Tenen, Grant Wythoff
+% November 4, 2013
+```
 
 At the top, nested between lines containing `---` and `---` you have a YAML metadata header. It declares the project's title, author, and date. Once this header has been created, you can begin with the body of your document.
 
