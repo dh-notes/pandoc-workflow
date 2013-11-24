@@ -90,6 +90,7 @@ Suppose this our document contains three sections, each subdivided into two subs
 ```
 
 Go ahead and type in some dummy text as well. You can use asterisks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type:  
+  
  `Something interesting.^[my first footnote!]` and `My first [link](www.google.com).` 
 
 Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)` and save the file with a .md extension.
