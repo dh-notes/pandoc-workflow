@@ -89,7 +89,7 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. 
+Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type `Something interesting.^[my first footnote!] and `My first [link](www.google.com).` 
 
  -o project.pdf project.md
 `
