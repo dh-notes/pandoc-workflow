@@ -55,9 +55,9 @@ You will need to following software installed on your computer:
 
 # Getting in touch with your inner terminal
 
-Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `[~]$`. The tilde indicates your "home" directory,^[In fact you can type `cd ~` at any point to return to your home directory, while `/` indicates the root, or the top-most directory on your drive.] and the dollar sign is just a prompt for you to type something. It is very likely that your "Documents" folder is located here. Type `pwd` and then hit enter to list the full name of your working directory. Use `pwd` whenever you feel lost in the command prompt.
+Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `[~]$`. The tilde indicates your "home" directory,^[In fact you can type `cd ~` at any point to return to your home directory, while `/` indicates the root, or the top-most directory on your drive.]. The dollar sign is just a prompt for you to type something. The dollar sign in the instructions indicates you must type what follows into the terminal prompt. It is very likely that your "Documents" folder is located here. Type `$ pwd` and then hit enter to list the full name of your working directory. Use `$ pwd` whenever you feel lost in the command prompt.
 
-The next command is `ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `cd DIRECTORY_NAME` to change directory and `cd ..` to go back up the folder structure. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
+The next command is `$ ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `$ cd DIRECTORY_NAME` to change directory and `$ cd ..` to go back up the folder structure. Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces. 
 
 These three commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder, and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
 
@@ -90,14 +90,14 @@ Suppose this our document contains three sections, each subdivided into two subs
 ```
 
 Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type `Something interesting.^[my first footnote!]` and `My first [link](www.google.com).` Finally, let's add an illusration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)` and save the file with a .md extension.
-
+  
 We are now ready to cast our first conversation. Open your terminal window, use `pwd` and `cd` to navigate to the correct folder for your project. Once you are there, type `ls` in the terminal to list the files. If you see your .md and your .jpg files, you are in the right place. To convert .md into .docx type `pandoc -o your_file.docx your_file.md`. Open the file with MS Word to check your results. 
-
-If you are not familiar with command line tools, imagine reading the above command as saying something like "Pandoc, convert my Markdown file into an MS Word file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." This flag will work as long as your files are end with the .md and .docx extensions. Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `man pandoc` in the terminal. 
-
+  
+If you are not familiar with command line tools, imagine reading the above command as saying something like "Pandoc, convert my Markdown file into an MS Word file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." This flag will work as long as your files are end with the .md and .docx extensions. Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal. 
+  
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:   
 
-`pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
+`$ pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
   
 At this point, you should spend some time with experimenting with some of other features of Markdown like quotations (referenced by `>` symbol) and code 
 
