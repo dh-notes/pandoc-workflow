@@ -89,7 +89,9 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-Go ahead and type in some dummy text as well. You can use asterisks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com).` Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)` and save the file with a .md extension.
+Go ahead and type in some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com).` 
+
+Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. Then, save the file with a .md extension.
   
 We are now ready to cast our first conversation. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your .jpg files, you are in the right place. To convert .md into .docx type `$ pandoc -o your_file.docx your_file.md`. Open the file with MS Word to check your results. 
   
