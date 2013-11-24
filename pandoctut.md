@@ -89,20 +89,13 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type `Something interesting.^[my first footnote!] and `My first [link](www.google.com).` 
+Go ahead and type in some dummy text as well. You can use astersks to add bold or italicised emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type `Something interesting.^[my first footnote!]` and `My first [link](www.google.com).` Finally, let's add an illusration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)` and save the file with a .md extension.
 
- -o project.pdf project.md
-`
+We are now ready to cast our first conversation. Open your terminal window, use `pwd` and `cd` to navigate to the correct folder for your project. Once you are there, type `ls` in the terminal to list the files. If you see your .md and your .jpg files, you are in the right place. To convert .md into .docx type `pandoc -o your_file.docx your_file.md`. Open the file with MS Word to check your results. 
 
-This command uses Pandoc to output (-o) a PDF filename of your choice, based on your Markdown file.  In order to automatically number your section headers, include `--number-sections` and to include a table of contents at the top of the document, include `--toc` in your command, directly after the PDF file you have named.  Thus, the new command would look like this:
+If you are not familiar with command line tools, imagine reading the above command as saying something like "Pandoc, convert my Markdown file into an MS Word file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." This flag will work as long as your files are end with the .md and .docx extensions. Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `man pandoc` in the terminal. 
 
-`
-pandoc -o project.pdf --number-sections --toc project.md
-`
-
-If everything has gone smoothly, you will now have a PDF file in your project folder that looks like this:
-
-To tinker with the format of your PDF output (i.e. narrower margins, double spacing, etc.), you can reference a LaTeX style file (plain text as well, with a .sty extension) saved in the same directory, and referenced in your typesetting command:
+More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:   
 
 `pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
 
