@@ -98,14 +98,16 @@ If you are not familiar with command line tools, imagine reading the above comma
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:   
 
 `pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
+  
+At this point, you should spend some time with experimenting with some of other features of Markdown like quotations (referenced by `>` symbol) and code 
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will include figures, properly formatted citations, and export a Microsoft Word compatible file.
+In this scenario, we will start adding a bibliography to our document. 
 
-## Including Illustrations
+## Folder structure 
 
-Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown.  Simply save the image you would like to use to your project directory.  Then, in project.md, you can include this image by referencing it as follows:
+Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown. Simply save the image you would like to use to your project directory.  Then, in project.md, you can include this image by referencing it as follows:
 
 `![A horse.](horse.jpg)`
 
@@ -123,7 +125,7 @@ Open Zotero (standalone or Firefox plugin version) and navigate to the folder co
 
 If you open this project.bib file with your plain text editor, you will see a list of items in the following format:
 
-`
+```
 @article{fyfe_digital_2011,
 	title = {Digital Pedagogy Unplugged},
 	volume = {5},
@@ -134,26 +136,15 @@ If you open this project.bib file with your plain text editor, you will see a li
 	year = {2011},
 	file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
 }
-`
+```
 
 Each entry contains a unique cite key, which is listed in the first row of text for each item. The default cite key exported by Zotero takes on the form "@fyfe_digital_2011," being the primary author's last name, first word in the title, and year separated by underscores.^[Again, the only good solution for editing this default cite key export format is the [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin. For the moment, however, it only lets you export your *entire* Zotero library, rather than an individual collection.]
 
 Go back to your project.md file. In order for Pandoc to match your cite keys with full citation data, you will have to edit your metadata header so that it points to your BibTeX file.  Edit the header so that it now reads:
 
-`
----
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-bibliography: project.bib
----
-`
-
 Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of our project.md file to look as follows.
 
-`
-central activities.^[@fyfe_digital_2011 argues that too.]
-`
+`central activities.^[@fyfe_digital_2011 argues that too.]`
 
 Your sentence will now be followed by an automatically numbered footnote, which contains the text "Fyfe argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
 
@@ -161,19 +152,6 @@ The default citation format in Pandoc is Chicago author-date format. If you want
 
 We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file `modern-language-association.csl` to your project directory.
 
-Finally, reference that citation style in the YAML header in the same manner as your bibliography:
-
-`
----
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-bibliography: project.bib
-csl: modern-language-association.csl
----
-`
-
-Now, when you compile, your references will be typeset in MLA format.
 
 ## Typesetting for Word Documents
 
