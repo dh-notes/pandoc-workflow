@@ -9,7 +9,9 @@ tags: tutorial, plain text
 
 Authoring, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.
 
-In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. Inspired by best practices in a variety of disciplines, we were guided by the following principles:
+In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. The tutorial assumes no prior experience, although we will sometimes digress for the sake of our more advanced readers.
+  
+Inspired by best practices in a variety of disciplines, we were guided by the following principles:
 
 # Principles
 
@@ -51,7 +53,7 @@ You will need to following software installed on your computer:
 
 * **Pandoc**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Pandoc was created and is maintained by John MacFarlane, Professor of Philosophy at the University of California Berkeley. This is humanities computing at its best and will serve as the engine of our workflow. With Pandoc, you will be able to compile text and bibliography into beautifully formatted and flexible documents. To verify that Pandoc is installed, enter `pandoc --version` into the command line.
 
-* **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
+* **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Beginners may want to consider skipping this step. Otherwise, type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
 
 # Getting in touch with your inner terminal
 
@@ -61,7 +63,7 @@ The next command is `$ ls` (list) which simply lists the files in the current di
 
 These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate you documents folder and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
 
-You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. 
+You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. Begin the tutorial by creating a new directory for this project. Practice navigating to this folder through the command line and by using a file browser of your choice (whatever you usually use to view your folders).
 
 # Case 1: Markdown basics
 
@@ -71,7 +73,7 @@ Markdown is a convention for structuring your plain-text documents semantically.
 
 Markdown conventions come in several "flavors" designed for use in particular contexts, such as GitHub. Pandoc is one such flavor of Markdown, and its conventions are described one the "Pandoc's Markdown" page on John MacFarlane's website.^[<http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html>]
 
-Let's now create a simple document. Open the plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block.]  
+Let's now create a simple document. Open the plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line. See Case 2 footnotes for more examples.]  
 
 ```
 % Plain Text Workflow 
@@ -89,45 +91,29 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-Go ahead and type in some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com).` 
+Go ahead and type in some dummy text. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should probably add a link and a footnote to our text as well. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com).` 
 
 Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. Then, save the file with a .md extension.
   
-We are now ready to cast our first conversation. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your .jpg files, you are in the right place. To convert .md into .docx type `$ pandoc -o your_file.docx your_file.md`. Open the file with MS Word to check your results. 
+We are now ready to cast our first conversion. Save your file as "project.md". Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your .jpg files, you are in the right place. To convert .md into .docx type `$ pandoc -o project.docx project.md`. Open the file with MS Word to check your results. 
   
 If you are not familiar with command line tools, imagine reading the above command as saying something like: "Pandoc, convert my Markdown file into an MS Word file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." This flag will work as long as your files end with the .md and .docx extensions. Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal. 
   
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:   
 
-`$ pandoc -H format.sty -o project.pdf --filter pandoc-citeproc --number-sections --toc project.txt`
+`$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`
   
 At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with an asterisk (`*`), verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly, when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments. 
 
-Above all, avoid the urge to format. Remember that you are identifying *semantic* units. The formatting will happen later, once you know the venue and the requirements of publication.  
+Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures. The formatting will happen later, once you know the venue and the requirements of publication.  
 
 # Case 2: Working with Bibliographies
 
-In this scenario, we will start adding a bibliography to our document. 
+In this scenario, we will add a bibliography to our document and then convert from Chicago to MLA formats.
 
-## Folder structure 
+If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Go ahead and open a reference manager of your choice and add some sample entries. When you are ready, find the option to export you bibliography in BibTeX (.bib) format. Save your .bib file in your project directory, and give it a reasonable title like "project.bib". 
 
-Illustrations are treated much like hyperlinks in Pandoc-flavored Markdown. Simply save the image you would like to use to your project directory.  Then, in project.md, you can include this image by referencing it as follows:
-
-`![A horse.](horse.jpg)`
-
-An exclamation mark signals that this file is an image.  Your caption will automatically be placed beneath the image and numbered as "Fig. 1" (a feature available in conversion to PDF only. Figures will not be numbered in .docx).  If you would like to keep all of your images in their own folder within your project directory, you can reference this subfolder in your filename.
-
-`![A horse.](images/horse.jpg)`
-
-## Including Citations
-
-Next we will use Zotero to export our bibliographic references as BibTex files, and call those formatted citations in our project document using simple @tags, or "citation keys." [BibTex](http://www.bibtex.org/) is a plain text format for listing references. Though this export process can be automated using Robin Wilson's [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin (which provides the option to edit the default format of those citation keys), we will be covering a project-by-project model here.
-
-If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Most modern reference managers are able to export bibliographies in BibTeX (.bib) format, which, being plain text and human-readible, complies with our stated principles. We will return to bibliographies in Case 2 of the tutorial.
-
-Open Zotero (standalone or Firefox plugin version) and navigate to the folder containing the references you would like to use in your project. Click the settings wheel and select "export." Select BibTex, and save the resulting .bib file to the same directory containing your project. Let's call it "project.bib" for simplicity's sake.
-
-If you open this project.bib file with your plain text editor, you will see a list of items in the following format:
+The general idea is to use Zotero as a sort of a "master list" for your references, and to generate these much smaller .bib files that will live in the same directory as your project. Go ahead and open your .bib file with the plain-text editor of your choice.^[Note that the .bib extension may be "registered" to Zotero in your operating system. That means when you click on a .bib file it is likely that Zotero will be called to open it, whereas we want to open it with a text editor. Eventually, you may want to associate the .bib extension with your editor.] Your .bib file should contain multiple entries that look something like this:  
 
 ```
 @article{fyfe_digital_2011,
@@ -142,55 +128,26 @@ If you open this project.bib file with your plain text editor, you will see a li
 }
 ```
 
-Each entry contains a unique cite key, which is listed in the first row of text for each item. The default cite key exported by Zotero takes on the form "@fyfe_digital_2011," being the primary author's last name, first word in the title, and year separated by underscores.^[Again, the only good solution for editing this default cite key export format is the [AutoZotBib](http://rtwilson.com/academic/autozotbib) plugin. For the moment, however, it only lets you export your *entire* Zotero library, rather than an individual collection.]
+Take a moment to orient yourself here. You will rarely have to edit these by hand, but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immedeatly follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your main project .md file.
 
-Go back to your project.md file. In order for Pandoc to match your cite keys with full citation data, you will have to edit your metadata header so that it points to your BibTeX file.  Edit the header so that it now reads:
+Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of your main .md file to look :
 
-Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of our project.md file to look as follows.
+`Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
 
-`central activities.^[@fyfe_digital_2011 argues that too.]`
+Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice.To generate a bibliography simply include a section called "Bibliography" at the end of document, like so `# Bibliography`. 
 
-Your sentence will now be followed by an automatically numbered footnote, which contains the text "Fyfe argues that too."  At the bottom of your document, if you add another section with the heading #Bibliography, a formatted bibliography of all works you have cited will be placed at the bottom of your document. So, our new project.md text file will look like this:
+Let's see if it works. Save your file, switch to the terminal window and run `pandoc -S --biblio project.bib project.md -o project.docx`. The upper case "S" stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "biblio" flag tells pandoc where we are keeping our bibliography, and you should already be familiar with "-o" from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at the end, nearer to the time of submission. For now we are just creating reasonably looking drafts.
 
-The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John Macfarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>.]
+## Changing citation styles
 
-We will change the citation style of our document from Chicago Style to Modern Language Association.  All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file `modern-language-association.csl` to your project directory.
+The default citation format in Pandoc is Chicago author-date format. If you want to typeset using a different format (this will be immensely useful when submitting a project to a journal that requires specific citation styles), you can download a "citation style language" file and save it to your directory.^[John MacFarlane recommends the primer on creating and modifying CSL styles at <http://citationstyles.org/downloads/primer.html>.]
 
-
-## Typesetting for Word Documents
-
-This time, rather than producing a PDF, we will create a .docx file compatible with Microsoft Word.  In your terminal, type:
-
-`pandoc -o project.docx --filter pandoc-citeproc --number-sections --toc project.md`
-
-Two elements have changed in our compile command.  First, we have named `project.docx` as the output (i.e., a Microsoft Word file).  Second, we have added `--filter pandoc-citeproc`, which will format all of our citations.
+We will change the citation style of our document from Chicago Style to Modern Language Association. All current CSL style files can be found at <http://editor.citationstyles.org/about/>.  Search for Modern Language Association, and download the file `modern-language-association.csl` to your project directory.
 
 # Case 3: Slides 
 
 In this scenario, we will use the same Pandoc Markup plain text language to produce a slide deck that can be viewed in any desktop or mobile web browser.  Several options are available to produce HTML slides, including DZ Slides, Beamer, and Slidy.  A full overview of slide show formats, are available at the Pandoc readme page.^[<http://johnmacfarlane.net/pandoc/README.html#producing-slide-shows-with-pandoc>]  We will be working with reveal.js.  Reveal.js is a CSS and JavaScript framework for creating beautiful presentations in HTML5, designed by [Hakim El Hattab](http://hakim.se/).
 
-In order to begin using reveal.js, you must save the "css," "js," and "lib" folders to your project directory available at the [reveal.js GitHub project page](https://github.com/hakimel/reveal.js/).  These folders contain all of the different layout, theme, and transition possibilities.
+# Summary
 
-Next, you will need an HTML template that defines how Pandoc will be render your plain text file as a slide deck in a web browser.  We have been using one written by Aaron Wolen and [available on GitHub](https://gist.github.com/aaronwolen/5017084#file-template-revealjs-html).  Download this file, named `template-revealjs.html`, and save it to your project directory.
-
-Now, create a new text file and name it project-slides.md, saving it to your project directory.  In this file, type the following:
-
-```
-title: Plain Text Workflow 
-author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
-
-# ![](images/image4.jpg)
-
-Text beneath image.
-```
-
-In this file, your YAML metadata header will serve as the first slide.  Each subsequent side is marked off by a single hashtag.  So, the first slide after your title will contain an image with the filename `image1.jpg` that you have saved in your project's image folder.  The following slide will contain some text.  The next slide will contain a header text, and the several subsequent images under that subheader.  Reveal.js javascript allows you to graphically scroll down (rather than to the right) for each subheader slide.
-  
-In order to compile your slides, navigate to your directory and run the following command:
-
-`pandoc -t html5 -s --template=template.revealjs.html --standalone --section-divs -o slides.html project_slides.md`
-
-The theme ("sky" above) can be changed to any of the options [listed here](lab.hakim.se/reveal-js/#/themes) by adding `--variable theme="sky"`, for instance, directly before `-o` in your command.  Transitions can be modified by adding `--variable transition="zoom"` or any of the other options [listed here](http://lab.hakim.se/reveal-js/#/transitions).
-
-The resulting file, `slides.html`, can be opened with your web browser and shown as a presentation from there.  Reveal.js allows you to hit the "esc" key in order to get a bird's eye view of your entire presentaiton, and the "period" key to temporarily make the screen go blank for emphasis during your presentation.
+To recap: you now have a project directory which contains a number of "source" files, your main.md file, main.bib file, .csl file, some images, along with some "target" files which we created during the tutorial, such as the main.docx, main.pdf, and main.html.
