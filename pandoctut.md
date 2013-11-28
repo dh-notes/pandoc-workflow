@@ -130,13 +130,17 @@ The general idea is to use Zotero as a sort of a "master list" for your referenc
 
 Take a moment to orient yourself here. You will rarely have to edit these by hand, but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immedeatly follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your main project .md file.
 
-Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of your main .md file to look :
+Now you can quickly type a cite key into your project, and upon "typesetting" your document, that key will be replaced by a full citation. Edit the footnote in the first line of your main .md file to look:
 
 `Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
 
-Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice.To generate a bibliography simply include a section called "Bibliography" at the end of document, like so `# Bibliography`. 
+Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice.To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
-Let's see if it works. Save your file, switch to the terminal window and run `pandoc -S --biblio project.bib project.md -o project.docx`. The upper case "S" stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "biblio" flag tells pandoc where we are keeping our bibliography, and you should already be familiar with "-o" from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at the end, nearer to the time of submission. For now we are just creating reasonably looking drafts.
+Let's see if it works. Save your file, switch to the terminal window and run:  
+
+ `pandoc -S --biblio project.bib project.md -o project.docx`. 
+
+The upper case "S" stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "biblio" flag tells pandoc where we are keeping our bibliography, and you should already be familiar with "-o" from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at the end, nearer to the time of submission. For now we are just creating reasonably looking drafts.
 
 ## Changing citation styles
 
