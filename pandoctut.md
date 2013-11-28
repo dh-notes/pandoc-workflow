@@ -138,9 +138,9 @@ Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded t
 
 Let's see if it works. Save your file, switch to the terminal window and run:  
 
- `pandoc -S --biblio project.bib project.md -o project.docx`. 
+ `$ pandoc -S --biblio project.bib project.md -o project.docx`. 
 
-The upper case "S" stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "biblio" flag tells pandoc where we are keeping our bibliography, and you should already be familiar with "-o" from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at the end, nearer to the time of submission. For now we are just creating reasonably looking drafts.
+The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The `biblio` flag tells pandoc where we are keeping our bibliography, and you should already be familiar with `-o` from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at the end, nearer to the time of submission. For now we are just creating reasonably looking drafts.
 
 ## Changing citation styles
 
