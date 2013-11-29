@@ -6,15 +6,13 @@ tags: tutorial, plain text
 ---
 
 # Philosophy 
-
-Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on [proprietary tools](http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html) and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.
+Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
 In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. The tutorial assumes no prior experience, although we will sometimes digress for the sake of our more advanced readers.
-  
+
 Inspired by best practices in a variety of disciplines, we were guided by the following principles:
 
 # Principles
-
 1. *Preference for plain-text, fully transparent, human-readable formats.* When writing in Word or Google Docs, what you see is not what you get. The file contains hidden automatically-generated formatting characters. When things go wrong, the obfuscated typesetting layer is difficult to troubleshoot. Plain text ensures transparency and answers to the standards of long-term preservation. MS Word may go the way of Word Perfect in the future, but plain text will always remain easy to read, catalog, mine, and transform. Furthermore, plain text enables easy and powerful versioning of the document, useful in collaboration and organizing drafts. 
 
 2. *Platform independence.* Writing in plain text means you can easily share, edit, and archive your documents in virtually any environment. Your plain text files will be accessible on cell phones, tablets, or, perhaps, on a low-powered terminal in some remote library. Plain text is backwards compatible and future proof. Whatever software or hardware comes along next, it will be able to understand your plain text files. 
@@ -28,26 +26,24 @@ Inspired by best practices in a variety of disciplines, we were guided by the fo
 Markdown and LaTeX answer all of these requirements. We choose to author the primary text in Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .docx and .tex files).^[There are no good solutions for arriving at MS Word from LaTeX.]
 
 # Use cases
+In this tutorial, you will learn to use Pandoc--a command line tool that converts plain text files a number of beautifully formatted file types: PDF, .docx, HTML, .tex, slide decks, and more.^[<http://johnmacfarlane.net/pandoc/>] 
 
-In this tutorial, you will learn to use [Pandoc](http://johnmacfarlane.net/pandoc/)--a command line tool that converts plain text files a number of beautifully formatted file types: PDF, .docx, HTML, .tex, slide decks, and more. 
-
-We will cover three use cases here. In the first, you will learn the basics of markdown--an easy to read and write plain text markup syntax -- and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. Finally, we will use Pandoc in conjunction with [reveal.js](http://lab.hakim.se/reveal-js/#/) to make some attractive slides. File management and versioning using Git will be covered in another tutorial.
+We will cover three use cases here. In the first, you will learn the basics of markdown--an easy to read and write plain text markup syntax -- and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. Finally, we will use Pandoc create some attractive slides for a presentation. 
 
 As a side-effect of this tutorial, you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows. 
 
 # Mindset
-
 Readers with experience in data science, software development, or server administration may want to skip this section and go straight to software requirements. For all others, we would like to take a moment to discuss what to do when things go wrong. Something is likely to go wrong in any tutorial. The magic of computing is in its universal reproducibility. Software works in similar ways on varied platforms, on machines in various state of disrepair, and under the precarious conditions of competing standards, formats, and protocols. The *Programming Historian 2* has a good guide on "what to do if you get stuck."^[http://programminghistorian.org/lessons/troubleshooting] In addition to the many helpful tips there, we suggest learning about IRC channels which provide near-instantaneous help on many of the tools discussed in this article. Generally, your troubleshooting heuristic should start with googling the exact error message (by using double quotes in Google), asking the IRC channel, and finally posting to relevant Q&A sites like Stack Exchange or Digital Humanities Questions & Answers.
 
 With this in mind, we purposefully omit some of the granular, platform- or hardware-bound details. For example, it makes no sense to provide installation instructions for Notepad++, when the Notepad++ website will always have instructions that are both more current and more complete. Similarly, the mechanics of Pandoc markdown are best explored by searching for "Pandoc markdown" on Google, with the likely first result being Pandoc's homepage.
 
-Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment. 
+Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment.
 
 # Software requirements
 
 You will need to following software installed on your computer:
 
-* A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor. 
+* A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor.
 
 * **Unix terminal emulator**. Working "in the command line" is equivalent to typing commands into the terminal. On a Mac you simply need to use your finder for "Terminal". On Windows, use PowerShell. Linux users are likely to be familiar with their terminals already.
 
@@ -67,21 +63,20 @@ You are likely to have some system of organizing your documents, projects, illus
 
 # Case 1: Markdown basics
 
-In this scenario, we will create a Markdown file and use Pandoc to convert into an MS Word document. 
+In this scenario, we will create a Markdown file and use Pandoc to convert into an MS Word document.
 
-Markdown is a convention for structuring your plain-text documents semantically. The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then "compile" the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style. 
+Markdown is a convention for structuring your plain-text documents semantically. The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then "compile" the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style.
 
 Markdown conventions come in several "flavors" designed for use in particular contexts, such as blogs, wikis, or code repositories. Pandoc is one such flavor of Markdown, geared for academic use. Its conventions are described one the "Pandoc's Markdown" page on John MacFarlane's website.^[<http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html>]
 
-Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line. See Case 2 footnotes for more examples.]  
-
+Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line. See Case 2 footnotes for more examples.]
 ```
-% Plain Text Workflow 
+% Plain Text Workflow
 % Dennis Tenen, Grant Wythoff
 % November 4, 2013
 ```
 
-Suppose this our document contains three sections, each subdivided into two subsections. Leave a blank line after the date and type something like this:  
+Suppose this our document contains three sections, each subdivided into two subsections. Leave a blank line after the date and type something like this:
 
 ```
 # Section 1
@@ -92,26 +87,26 @@ Suppose this our document contains three sections, each subdivided into two subs
 ```
 
 Go ahead and enter some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com)`.
-  
+
 Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. When you are done types let's save the document as `project.md`, where .md stands for Markdown.
-  
+
 We are now ready to cast our first conversion. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your images, you are in the right place. To convert .md into .docx type `$ pandoc -o project.docx project.md`. Open the file with MS Word to check your results. Alternatively, you can run `$ pandoc -o project.odt project.md` if you are coming from the Open Office world.  
-  
+
 If you are not familiar with command line tools, imagine reading the above command as saying something like: "Pandoc, convert my Markdown file into an MS Word file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal. 
-  
-More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:   
+
+More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:
 
 `$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`
-  
+
 At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with `*`, verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments. 
 
-Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures. The formatting will happen later, once you know the venue and the requirements of publication.  
+Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures. The formatting will happen later, once you know the venue and the requirements of publication.
 
 # Case 2: Working with Bibliographies
 
 In this scenario, we will add a bibliography to our document and then convert from Chicago to MLA formats.
 
-If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Go ahead and open a reference manager of your choice and add some sample entries. When you are ready, find the option to export you bibliography in BibTeX (.bib) format. Save your .bib file in your project directory, and give it a reasonable title like "project.bib". 
+If you are not using a reference manger like Endnote or Zotero, you should. Zotero slots into the free software toolkit much better than most of its for-profit competitors. Like Pandoc, it was created by the academic community, which welcomes efforts to extend the tool's functionality. Go ahead and open a reference manager of your choice and add some sample entries. When you are ready, find the option to export you bibliography in BibTeX (.bib) format. Save your .bib file in your project directory, and give it a reasonable title like "project.bib".
 
 The general idea is to use Zotero as a sort of a "master list" for your references, and to generate these much smaller .bib files that will live in the same directory as your project. Go ahead and open your .bib file with the plain-text editor of your choice.^[Note that the .bib extension may be "registered" to Zotero in your operating system. That means when you click on a .bib file it is likely that Zotero will be called to open it, whereas we want to open it within a text editor. Eventually, you may want to associate the .bib extension with your editor.] Your .bib file should contain multiple entries that look something like this:  
 
@@ -136,29 +131,29 @@ Edit the footnote in the first line of your main .md file to look like something
 
 Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice. To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
-Let's see if this works. Save your file, switch to the terminal window and run:  
+Let's see if this works. Save your file, switch to the terminal window and run:
 
- `$ pandoc -S --biblio project.bib project.md -o project.docx`. 
+ `$ pandoc -S --biblio project.bib project.md -o project.docx`.
 
 The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The `biblio` flag tells pandoc where we are keeping our bibliography, and you should already be familiar with `-o` from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at later, as close as possible to the time of publication. For now we are just creating drafts based on reasonable defaults.
 
 ## Changing citation styles
 
-The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by passing the `--csl` flag:   
+The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by passing the `--csl` flag:
 
-`$ pandoc -S --biblio project.bib --csl modern-language-association.csl project.md -o project.docx`  
+`$ pandoc -S --biblio project.bib --csl modern-language-association.csl project.md -o project.docx`
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, take the bibliography from project.bib and convert my Markdown file into MS Word (as you can guess from the extension) using the MLA stylesheet." As you get more familiar with citation stylesheets, consider adding .csl files for journals in your field to the archive as a service to the community.
 
-# Case 3: Slides 
+# Case 3: Slides
 
 In this scenario, we will use the same Pandoc Markup plain text language to produce a slide deck that can be viewed in any desktop or mobile web browser. Several options are available to produce HTML slides, including DZ Slides, Beamer, and Slidy. A full overview of slide show formats is available online.^[<http://johnmacfarlane.net/pandoc/README.html#producing-slide-shows-with-pandoc>]. Slidy offers the simplest of the options, producing elegant, text-driven slides. More advanced readers may want to experiment with Reveal.js which offers more options, but also requires external dependencies.
 
-For the purposes of this tutorial, let's pretend that your project.md file is now the basis for a presentation. Footnotes links and images work as they did in previous examples. The major semantic difference now is that our `# Headings` and `## Subheadings` will now become a controlling structure for slides and not for chapters or article sections. Start with the header block as before, and try something along the lines of:  
+For the purposes of this tutorial, let's pretend that your project.md file is now the basis for a presentation. Footnotes links and images work as they did in previous examples. The major semantic difference now is that our `# Headings` and `## Subheadings` will now become a controlling structure for slides and not for chapters or article sections. Start with the header block as before, and try something along the lines of:
 
 ```
 # Part I
-## Slide I.1 
+## Slide I.1
 
 Some text here.
 
@@ -187,7 +182,7 @@ Some text.
 Some text.
 ```
 
-Note that for `# Slide 1` to become a slide level control it must have some content in the slide. You can also use a horizontal rule `-----` to create slides without section headers. If you need to make a note for yourself, but don't want it to show up on the slides, you can use HTML style comments like so:  
+Note that for `# Slide 1` to become a slide level control it must have some content in the slide. You can also use a horizontal rule `-----` to create slides without section headers. If you need to make a note for yourself, but don't want it to show up on the slides, you can use HTML style comments like so:
 
 ```
 <!-- This is a comment -->
