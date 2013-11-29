@@ -1,11 +1,11 @@
 ---
-title: Sustainable Authorship in Plain Text 
+title: Sustainable Authorship in Plain Text
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
 tags: tutorial, plain text
 ---
 
-# Philosophy 
+# Philosophy
 Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
 In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. The tutorial assumes no prior experience, although we will sometimes digress for the sake of our more advanced readers.
@@ -70,6 +70,7 @@ Markdown is a convention for structuring your plain-text documents semantically.
 Markdown conventions come in several "flavors" designed for use in particular contexts, such as blogs, wikis, or code repositories. Pandoc is one such flavor of Markdown, geared for academic use. Its conventions are described one the "Pandoc's Markdown" page on John MacFarlane's website.^[<http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html>]
 
 Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line. See Case 2 footnotes for more examples.]
+
 ```
 % Plain Text Workflow
 % Dennis Tenen, Grant Wythoff
@@ -139,9 +140,9 @@ The upper case `S` flag stands for "smart", a mode which produces "typographical
 
 ## Changing citation styles
 
-The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by passing the `--csl` flag:
+The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory as `mla.csl`. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by passing the `--csl` flag:
 
-`$ pandoc -S --biblio project.bib --csl modern-language-association.csl project.md -o project.docx`
+`$ pandoc -S --biblio project.bib --csl mla.csl project.md -o project.docx`
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, take the bibliography from project.bib and convert my Markdown file into MS Word (as you can guess from the extension) using the MLA stylesheet." As you get more familiar with citation stylesheets, consider adding .csl files for journals in your field to the archive as a service to the community.
 
