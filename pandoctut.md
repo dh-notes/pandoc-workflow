@@ -158,24 +158,23 @@ For the purposes of this tutorial, let's pretend that your project.md file is no
 
 ```
 # Part I
-
-## Slide 1
+## Slide I.1 
 
 Some text here.
 
-## Slide 2
-
+## Slide II.2
 ### Header 1
 Some text.
 
 ### Header 2
-Some Text.
+More text.
 
 # Part II
+## Slide I.1
+What an amazing slide.
 
-## Slide 1
-
-## Slide 2
+## Slide II.2
+Some text.
 ```
 
 The first header that is followed by content is called "slide level." In our case, the slide level is two hash marks deep. All headers on the slide level will create new slides. All headers *above* the slide level (one hash mark, in our case) create new sections, while all headers below the slide level (three hash marks) create divisions within the slide. You can also do something like this for simpler slide control:  
@@ -186,12 +185,9 @@ Some text.
 
 # Slide 2
 Some text.
-
-# Slide 3
-Some text. 
 ```
 
-Note that for `Slide 1` to become a slide level control it must have some content in the slide. You can also use a horizontal rule `-----` to create slides without section headers. If you need to make a note for yourself, but don't want it to show up on the slides, you can use HTML style comments like so:  
+Note that for `# Slide 1` to become a slide level control it must have some content in the slide. You can also use a horizontal rule `-----` to create slides without section headers. If you need to make a note for yourself, but don't want it to show up on the slides, you can use HTML style comments like so:  
 
 ```
 <!-- This is a comment -->
