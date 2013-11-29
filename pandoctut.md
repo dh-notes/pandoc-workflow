@@ -195,6 +195,7 @@ Note that for `Slide 1` to become a slide level control it must have some conten
 
 ```
 <!-- This is a comment -->
+```
 
 We often print out our Markdown source as notes for the presentation. To convert your source Markdown file into a slide deck, run the following command in your terminal:
 
