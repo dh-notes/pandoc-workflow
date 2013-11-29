@@ -170,7 +170,7 @@ Some text.
 More text.
 
 # Part II
-## Slide I.1
+## Slide II.1
 What an amazing slide.
 
 ## Slide II.2
