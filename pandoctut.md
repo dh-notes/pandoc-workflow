@@ -2,7 +2,7 @@
 title: Sustainable Authorship in Plain Text
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
-tags: tutorial, plain text
+tags: tutorial, plain text, draft
 ---
 
 # Philosophy
