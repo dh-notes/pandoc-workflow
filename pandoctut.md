@@ -87,7 +87,7 @@ Suppose this our document contains three sections, each subdivided into two subs
 # Section 3
 ```
 
-Go ahead and enter some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.google.com)`.
+Go ahead and enter some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.eff.com)`.^[When the text of the link and the address are the same it is faster to write `<www.eff.org>`]
 
 Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. When you are done types let's save the document as `project.md`, where .md stands for Markdown.
 
@@ -126,7 +126,7 @@ The general idea is to use Zotero as a sort of a "master list" for your referenc
 
 Take a moment to orient yourself here. You will rarely have to edit these by hand, but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immediately follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your main project.md file.
 
-Edit the footnote in the first line of your main .md file to look like something like this, where @fyfe_digital_2011 is replaced with one of the unique IDs from your .bib file:
+Edit the footnote in the first line of your main .md file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your .bib file:
 
 `Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
 
