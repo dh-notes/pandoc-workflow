@@ -173,7 +173,7 @@ What an amazing slide.
 Some text.
 ```
 
-The first header that is followed by content is called "slide level." In our case, the slide level is two hash marks deep. All headers on the slide level will create new slides. All headers *above* the slide level (one hash mark, in our case) create new sections, while all headers below the slide level (three hash marks) create divisions within the slide. You can also do something like this for simpler slide control:
+The first header that is followed by content is called "slide level." In our case, the slide level is two hash marks deep. All headers on the slide level will create new slides. All headers *above* the slide level (one hash mark, in our case) create new sections, while all headers below the slide level (three hash marks) create divisions within the slide. For even simpler slide control you can do something like this:
 
 ```
 # Slide 1
