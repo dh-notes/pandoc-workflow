@@ -42,7 +42,7 @@ Instead of following the tutorial in a mechanical way, you should strive to unde
 
 # Software requirements
 
-You will need to following software installed on your computer:
+You will need to use your search engine and the links provided in the footnotes to install the following software on your computer:
 
 * A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor.
 
