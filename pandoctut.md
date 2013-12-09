@@ -29,7 +29,7 @@ Markdown and LaTeX answer all of these requirements. We choose to author the pri
 # Use cases
 In this tutorial, you will learn to use Pandoc--a command line tool that converts plain text files a number of beautifully formatted file types: PDF, .docx, HTML, .tex, slide decks, and more.^[<http://johnmacfarlane.net/pandoc/>]
 
-We will cover three use cases here. In the first, you will learn the basics of markdown--an easy to read and write plain text markup syntax--and use Pandoc to generate a simple .pdf file.^[Don't worry if you don't understand any of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. Finally, we will use Pandoc create some attractive slides for a presentation.
+We will cover three use cases here. In the first, you will learn the basics of markdown--an easy to read and write plain text markup syntax--and use Pandoc to generate a simple .docx or .pdf file.^[Don't worry if you don't understand some of of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form MLA to Chicago. Finally, we will use Pandoc create some attractive slides for a presentation.
 
 As a side-effect of this tutorial, you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows.
 
