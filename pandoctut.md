@@ -64,11 +64,11 @@ The next command is `$ ls` (list) which simply lists the files in the current di
 
 These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate your documents folder and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
 
-You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. Begin the tutorial by creating a new directory for this project. Practice navigating to this folder through the command line and by using a file browser of your choice (whatever you usually use to view your folders).
-
 # Case 1: Markdown basics
 
 In this scenario, we will create a Markdown file and use Pandoc to convert into an MS Word document.
+
+To begin, create a new folder, or "directory", for this project. You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. This will allow you to call a variety of elements (i.e. an image or a citation) easily and succinctly within the body of your plain text document.
 
 Markdown is a convention for structuring your plain-text documents semantically. The idea is to identify logical structures in your document (a title, sections, subsections, footnotes, etc.), mark them with some unobtrusive characters, and then "compile" the resulting text with a typesetting interpreter which will format the document consistently, according to a specified style.
 
