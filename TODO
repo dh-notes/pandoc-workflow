@@ -20,7 +20,7 @@ In this way, I think the tutorial can work on two levels, a beginner level for i
 
 In our experience, instructions like "Open your terminal window" have not been sufficient for the technical level of many of our readers. I'd say that most people who can do that and would want to, can figure out most of this tutorial on their own with existing documentation for the various tools. Your intro to the command line commands suggests the tutorial doesn't assume much technical skill, so the expectation that people even know what the command line is a bit incongruent with that.
 
-The tutorial probably should mention explicitly that bibliographic citations CAN be handled without using the technique you describe if people want to hand write them (and not have to worry about whether the CSL files can format all of their sources correctly--it can be pretty bad at non-standardized premodern sources, and can require fudging your zotero entry to get the CSL to output what you want).
+~~The tutorial probably should mention explicitly that bibliographic citations CAN be handled without using the technique you describe if people want to hand write them (and not have to worry about whether the CSL files can format all of their sources correctly--it can be pretty bad at non-standardized premodern sources, and can require fudging your zotero entry to get the CSL to output what you want).~~
 
 As for the Slide case study, I'm not sure how this goes beyond the section of Macfarlane's documentation. It's pretty clear that the other sections do. Perhaps the slide tutorial and other more advanced pandoc concepts could be saved for another tutorial? 
 
