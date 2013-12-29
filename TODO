@@ -30,3 +30,5 @@ As for the Slide case study, I'm not sure how this goes beyond the section of Ma
 > 2. Pandoc 1: Converting Document Types (which covers all relevant aspects of terminal)
 > 3. Pandoc 2: Working with Citations
 > 4. Plain Text Slide Decks
+
+In the summary, you say that you should have a project directory with various source files, etc, but you don't give explicit instructions for creating this earlier. I think readers would benefit from seeing all of the steps spelled out in the relevant sections. I realize that part of your aim here is to get people to understand the general principles rather than just follow a recipe, but people really like recipes, and our experience is that it's a good way to get them on their way to understanding the principles. This is mostly because people see how easy it is and can start to internalize what's going on by seeing concrete examples.
