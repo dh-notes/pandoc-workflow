@@ -24,6 +24,9 @@ In our experience, instructions like "Open your terminal window" have not been s
 
 As for the Slide case study, I'm not sure how this goes beyond the section of Macfarlane's documentation. It's pretty clear that the other sections do. Perhaps the slide tutorial and other more advanced pandoc concepts could be saved for another tutorial? 
 
-In the summary, you say that you should have a project directory with various source files, etc, but you don't give explicit instructions for creating this earlier. I think readers would benefit from seeing all of the steps spelled out in the relevant sections. I realize that part of your aim here is to get people to understand the general principles rather than just follow a recipe, but people really like recipes, and our experience is that it's a good way to get them on their way to understanding the principles. This is mostly because people see how easy it is and can start to internalize what's going on by seeing concrete examples.
-
-Let me know your interest in making some revisions along these lines, or arguments to the contrary. Again, I think this will be a popular tutorial to have at PH, and I'm looking forward to seeing it there!
+> So, perhaps break the entire piece into a series of tutorials?
+> 0. Philosophy, Principles, and Requirements
+> 1. Intro to Markdown
+> 2. Pandoc 1: Converting Document Types (which covers all relevant aspects of terminal)
+> 3. Pandoc 2: Working with Citations
+> 4. Plain Text Slide Decks
