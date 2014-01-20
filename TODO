@@ -1,8 +1,9 @@
-LaTeX flavors.
-reveal.js grab the needed folders with wget
-about terminal on Windows.
-
---------
+---
+title: Sustainable Authorship in Plain Text
+author: Dennis Tenen, Grant Wythoff
+date: November 4, 2013
+tags: tutorial, pandoc, plain text, draft
+---
 
 *** Leave until the end***
 1. Your motivation to the reader in the first paragraph comes largely through an appeal frustration with typical workflows. I wonder if more people might be immediately interested in engaging with the tutorial if focused more on extolling the virtues (which you sort of do through the critique of existing practices) rather than criticizing the practices that many people use. At least in my experience, most people who i've talked to about using markdown for editorial work and collaboration (who have any hope of actually doing it) don't experience _that_ much frustration with existing practices since it's all they know. They don't think about accessible formats, much less consider them requirements of academic writing. I think it's good to point out the limitations of proprietary tools and formats, but to begin by explaining how horrible everything else is could easily turn off readers who are interested exploring alternative practices but don't feel as strongly as you do about the inadequacies of what have been traditional workflows.
