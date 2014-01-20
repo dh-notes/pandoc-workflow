@@ -86,17 +86,17 @@ Pandoc-flavored Markdown automatically interprets the first header line as your 
 
 Go ahead and enter some dummy text as well. You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type:  `Needs a note.^[my first footnote!]` and `My first [link](www.eff.com)`.^[When the text of the link and the address are the same it is faster to write `<www.eff.org>`]
 
-Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. When you are done types let's save the document as `project.md`, where .md stands for Markdown.
+Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. When you are done types let's save the document as `project.md`, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only covers the basics.
 
-There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.
+There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.
 
 Let's see what Pandoc allows us to do with our Markdown file.
 
 # Getting in touch with your inner terminal
 
-Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. 
+(If you are already familiar with the using command line, feel free to skip this section.) Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. 
 
 First, open your terminal window. You should see a prompt that looks something like this: `computer-name:~username $`. The tilde indicates your "home" directory,^[In fact you can type `$ cd ~` at any point to return to your home directory.]. The dollar sign is just a prompt for you to type something. The dollar sign in the instructions indicates you must type what follows into the terminal prompt (as opposed to typing it into your document). It is very likely that your "Documents" folder is located here. Type `$ pwd` and then hit enter to list the full name of your working directory. Use `$ pwd` whenever you feel lost in the command prompt.
 
@@ -104,13 +104,15 @@ The next command is `$ ls` (list) which simply lists the files in the current di
 
 These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate your documents folder and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
 
-# Converting Markdown to an MS Word document using Pandoc
+# Using Pandoc to convert Markdown to an MS Word document
 
-We are now ready to cast our first conversion. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your images, you are in the right place. To convert .md into .docx type `$ pandoc -o project.docx project.md`. Open the file with MS Word to check your results. Alternatively, you can run `$ pandoc -o project.odt project.md` if you would like to produce an Open Office document.
+We are now ready to cast our first conversion. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your images, you are in the right place. To convert .md into .docx type `$ pandoc -o project.docx project.md`. Open the file with MS Word to check your results. Alternatively, you can run `$ pandoc -o project.odt project.md` if you would like to produce an Open Office document, the open source alternative to MS Word.^[For more on Open Office, see <http://www.openoffice.org/why/index.html>.]
 
 If you are not familiar with command line tools, imagine reading the above command as saying something like: "Pandoc, create an MS Word file out of my Markdown file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal.
 
-More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or .pdf formats. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:
+The structure of this command works the same way in producing a PDF from your Markdown file.  This time, try `pandoc -o project.pdf project.md`, and you will have a beautifully formatted PDF of the document now saved in your project directory.
+
+More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:
 
 `$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`
 
