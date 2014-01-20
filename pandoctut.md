@@ -6,11 +6,13 @@ tags: tutorial, pandoc, plain text, draft
 ---
 
 # Philosophy
-Some positive stuff.
+Though plain text has been in existence for almost half a century, it remains the most powerful format for academic writing. Not only does writing in plain text guarantee that your files will remain readable ten, fifteen, twenty years from now, it also allows you to simply and easily share every element of the scholarly apparatus across all possible platforms, from bibliographies to illustrations to citation styles.  In this tutorial, we outline a workflow that frees the researcher from proprietary word processing software and fragile file formats. 
+
+Markdown is a set of conventions for formatting plain text files. For instance, `*italic*` becomes *italic* and `**bold**` becomes **bold.**  When coupled with Pandoc, software that converts a plain text file into any one of a number of other formats, such as DOC and PDF.
 
 Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
-In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. 
+We would like to suggest an alternative workflow built around open-source tools and transparent formats.
 
 # Target Audience
 Professional writers and researchers constitute our primary audience. The tutorial assumes no prior technical knowledge, but can scale with experience. We often suggest more advanced techniques towards the end of each section. These are clearly marked, and can be returned to after some practice and experimentation.
@@ -38,7 +40,6 @@ In this tutorial, you will learn to use Pandoc--a command line tool that convert
 We will cover three use cases here. In the first, you will learn the basics of markdown--an easy to read and write plain text markup syntax--and use Pandoc to generate a simple .docx or .pdf file.^[Don't worry if you don't understand some of of this terminology yet!] In the second, we will add some figures and bibliography, generate an MS Word document, and then change the citation style form Chicago to MLA. Finally, we will use Pandoc create some attractive slides for a presentation.
 
 As a side-effect of this tutorial, you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows.
-
 
 # Software requirements
 
