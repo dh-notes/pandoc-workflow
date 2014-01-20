@@ -90,7 +90,7 @@ Finally, let's add an illustration. Copy an image (any small image) to your fold
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only covers the basics.
 
-There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file.,  But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.  The workflow we outline here uses only free and open source tools created by and for the academic community.
+There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, which we detail below in the Useful Resources section.  But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.  The workflow we outline here uses only free and open source tools created by and for the academic community.
 
 So let's see what Pandoc allows us to do with our Markdown file.
 
