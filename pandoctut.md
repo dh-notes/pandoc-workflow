@@ -3,6 +3,7 @@ title: Sustainable Authorship in Plain Text Using Pandoc and Markdown
 author: Dennis Tenen, Grant Wythoff
 date: January 20, 2014
 tags: tutorial, pandoc, plain text, draft
+bibliography: pandoctut.bib
 ---
 
 ![The Lexoriter system, c. 1985. From @price_definitive_1984.](lexoriter.jpg)
