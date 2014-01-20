@@ -8,7 +8,7 @@ tags: tutorial, pandoc, plain text, draft
 *** Leave until the end***
 1. Your motivation to the reader in the first paragraph comes largely through an appeal frustration with typical workflows. I wonder if more people might be immediately interested in engaging with the tutorial if focused more on extolling the virtues (which you sort of do through the critique of existing practices) rather than criticizing the practices that many people use. At least in my experience, most people who i've talked to about using markdown for editorial work and collaboration (who have any hope of actually doing it) don't experience _that_ much frustration with existing practices since it's all they know. They don't think about accessible formats, much less consider them requirements of academic writing. I think it's good to point out the limitations of proprietary tools and formats, but to begin by explaining how horrible everything else is could easily turn off readers who are interested exploring alternative practices but don't feel as strongly as you do about the inadequacies of what have been traditional workflows.
 
-[ ]*** Grant ***
+[X]*** Grant ***
 2. Principle #1 seems to conflate sustainability and readability. Both are important issues--would it be useful to differentiate them? Principles #2 and #5 seem to be quite similar--perhaps they could be joined?
 
 [X] *** Dennis ***
@@ -22,10 +22,10 @@ tags: tutorial, pandoc, plain text, draft
 
 In our experience, instructions like "Open your terminal window" have not been sufficient for the technical level of many of our readers. I'd say that most people who can do that and would want to, can figure out most of this tutorial on their own with existing documentation for the various tools. Your intro to the command line commands suggests the tutorial doesn't assume much technical skill, so the expectation that people even know what the command line is a bit incongruent with that.
 
-[ ] *** Grant to expand a on the Biblio section a bit. Already done. ***
+[X] *** Grant to expand a on the Biblio section a bit. Already done. ***
 6. The tutorial probably should mention explicitly that bibliographic citations CAN be handled without using the technique you describe if people want to hand write them (and not have to worry about whether the CSL files can format all of their sources correctly--it can be pretty bad at non-standardized premodern sources, and can require fudging your zotero entry to get the CSL to output what you want).~~
 
-[ ] *** Dennis to cut the slides out into a separate document. ***
+[X] *** Dennis to cut the slides out into a separate document. ***
 As for the Slide case study, I'm not sure how this goes beyond the section of Macfarlane's documentation. It's pretty clear that the other sections do. Perhaps the slide tutorial and other more advanced pandoc concepts could be saved for another tutorial? 
 
 [X] *** Grant ***
