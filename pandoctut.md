@@ -217,7 +217,8 @@ There is no better place to start looking for support than John MacFarlane's [si
 
 Although we suggest starting out with a simple editor, many (70+, according to [this blog post](http://web.archive.org/web/20140120195538/http://mashable.com/2013/06/24/markdown-tools/)) other, Markdown-specific alternatives to MS Word are available online, and often free of cost. From these, we liked Mou . Draft, Authorea, 
 
-Esuch as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/).ditors
+There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/).
+
 Platforms
 Get Involved
 
