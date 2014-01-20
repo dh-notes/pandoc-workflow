@@ -6,6 +6,8 @@ tags: tutorial, pandoc, plain text, draft
 ---
 
 # Philosophy
+Some positive stuff.
+
 Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
 In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. 
@@ -13,10 +15,9 @@ In this tutorial, we would like to suggest an alternative workflow built around 
 # Target Audience
 Professional writers and researchers constitute our primary audience. The tutorial assumes no prior technical knowledge, but can scale with experience. We often suggest more advanced techniques towards the end of each section. These are clearly marked, and can be returned to after some practice and experimentation.
 
-A secondary objective in writing this tutorial was to introduce the Markdown + Pandoc combination to journal and book editors. Although not covered in this tutorial, Pandoc offers a powerful template system, which can be used to greatly streamline workflows particular to academic publishing. In a perfect world, journals would accept paper submissions in Markdown and run batch Pandoc processes to normalize for style and formatting. Getting familiar with the mechanics of writing in plain text is a good first step towards a more virtuous publishing ecosystem.
+A secondary objective in writing this tutorial was to introduce the Markdown + Pandoc combination to journal and book editors. Although not covered in this tutorial, Pandoc offers a powerful template system (through LaTeX), which can be used to greatly streamline workflows particular to academic publishing. In a perfect world, journals would accept paper submissions in Markdown and run batch Pandoc processes to normalize for style and formatting. Getting familiar with the mechanics of writing in plain text is a good first step towards that vision.
 
 # Principles
-
 Inspired by best practices in a variety of disciplines, we were guided by the following principles:
 
 1. *Preference for human-readable formats.* When writing in Word or Google Docs, what you see is not what you get. The .doc file contains hidden, automatically-generated formatting characters. When things go wrong, the obfuscated typesetting layer is difficult for the user to troubleshoot. Something as simple as dropping in an image or pasting text can entirely throw off your document's formatting.
