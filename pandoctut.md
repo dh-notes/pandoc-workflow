@@ -57,7 +57,7 @@ With this in mind, we purposefully omit some of the granular, platform- or hardw
 
 # Case 1: Markdown basics
 
-In this scenario, we will create a Markdown file and use Pandoc to convert into an MS Word document.
+In this scenario, we will learn the basics of writing in Markdown syntax.
 
 To begin, create a new folder, or "directory", for this project. You are likely to have some system of organizing your documents, projects, illustrations, and bibliographies. But often, your document, its illustrations, and bibliography live in different folders, which makes them hard to track. Our goal is to create a single folder for each project, with all relevant materials included. This will allow you to call a variety of elements (i.e. an image or a citation) easily and succinctly within the body of your plain text document.
 
@@ -100,6 +100,8 @@ At this point, you should spend some time exploring some of other features of Ma
 Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures.^[Even `*italics*` and `**bold**` in Markdown are not really formatting marks, but indicate different level of *emphasis*.] The formatting will happen later, once you know the venue and the requirements of publication.
 
 # Getting in touch with your inner terminal
+
+and use Pandoc to convert into an MS Word document.
 
 Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `computer-name:~username $`. The tilde indicates your "home" directory,^[In fact you can type `$ cd ~` at any point to return to your home directory.]. The dollar sign is just a prompt for you to type something. The dollar sign in the instructions indicates you must type what follows into the terminal prompt (as opposed to typing it into your document). It is very likely that your "Documents" folder is located here. Type `$ pwd` and then hit enter to list the full name of your working directory. Use `$ pwd` whenever you feel lost in the command prompt.
 
