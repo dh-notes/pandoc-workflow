@@ -71,7 +71,7 @@ Let's now create a simple document in Markdown. Open a plain-text editor of your
 ```
 % Plain Text Workflow
 % Dennis Tenen, Grant Wythoff
-% November 4, 2013
+% January 20, 2014
 ```
 
 Pandoc-flavored Markdown automatically interprets the first header line as your title, second as author, and third as date. Let's suppose our document contains three sections, each subdivided into two subsections. Leave a blank line after the date and type something like this:
@@ -88,6 +88,24 @@ Go ahead and enter some dummy text as well. You can use asterisks to add bold or
 
 Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in `![image caption](your_image.jpg)`. When you are done types let's save the document as `project.md`, where .md stands for Markdown.
 
+If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only covers the basics.
+
+There are programs that allow you to watch a live preview of Markdown output, such as [Marked](http://marked2app.com/) (Mac, proprietary). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliography to illustration, we recommend that you stick with simple, plain text files stored on your computer.
+
+Let's see what Pandoc allows us to do with our Markdown file.
+
+# Getting in touch with your inner terminal
+
+Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `computer-name:~username $`. The tilde indicates your "home" directory,^[In fact you can type `$ cd ~` at any point to return to your home directory.]. The dollar sign is just a prompt for you to type something. The dollar sign in the instructions indicates you must type what follows into the terminal prompt (as opposed to typing it into your document). It is very likely that your "Documents" folder is located here. Type `$ pwd` and then hit enter to list the full name of your working directory. Use `$ pwd` whenever you feel lost in the command prompt.
+
+The next command is `$ ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `$ cd DIRECTORY_NAME` to change directory and `$ cd ..` to go back up the folder structure.^[Readers already familiar with the terminal should experiment with `$ pushd`, `$ popd`, and `$ cd -`.] Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces.^[It is a good idea to get into the habit of not using spaces in folder or file names. Dashes-or_underscores instead of spaces in your filenames ensure lasting cross-platform compatibility.]
+
+These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate your documents folder and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
+
+----
+
+and use Pandoc to convert into an MS Word document.
+
 We are now ready to cast our first conversion. Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md and your images, you are in the right place. To convert .md into .docx type `$ pandoc -o project.docx project.md`. Open the file with MS Word to check your results. Alternatively, you can run `$ pandoc -o project.odt project.md` if you would like to produce an Open Office document.
 
 If you are not familiar with command line tools, imagine reading the above command as saying something like: "Pandoc, create an MS Word file out of my Markdown file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal.
@@ -100,15 +118,7 @@ At this point, you should spend some time exploring some of other features of Ma
 
 Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures.^[Even `*italics*` and `**bold**` in Markdown are not really formatting marks, but indicate different level of *emphasis*.] The formatting will happen later, once you know the venue and the requirements of publication.
 
-# Getting in touch with your inner terminal
-
-and use Pandoc to convert into an MS Word document.
-
-Modern operating systems are designed to obscure the file structure on your hard drive. There is a good reason for this: many system files have long and confusing names, and should not be touched. Taking a few moments to get in touch with your filing system will help orient your activities immensely. You need to learn only a few commands to get started. First, open your terminal window. You should see a prompt that looks something like this: `computer-name:~username $`. The tilde indicates your "home" directory,^[In fact you can type `$ cd ~` at any point to return to your home directory.]. The dollar sign is just a prompt for you to type something. The dollar sign in the instructions indicates you must type what follows into the terminal prompt (as opposed to typing it into your document). It is very likely that your "Documents" folder is located here. Type `$ pwd` and then hit enter to list the full name of your working directory. Use `$ pwd` whenever you feel lost in the command prompt.
-
-The next command is `$ ls` (list) which simply lists the files in the current directory.^[Remember to hit enter after every command.] Finally, you can type `$ cd DIRECTORY_NAME` to change directory and `$ cd ..` to go back up the folder structure.^[Readers already familiar with the terminal should experiment with `$ pushd`, `$ popd`, and `$ cd -`.] Once you start typing the directory name, use the *tab* key to auto complete the text--this is particularly useful for long directory names, or directories names that contain spaces.^[It is a good idea to get into the habit of not using spaces in folder or file names. Dashes-or_underscores instead of spaces in your filenames ensure lasting cross-platform compatibility.]
-
-These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate your documents folder and think about they way you have organized your files. At some point you should raise your terminal awareness by going through Zed. A. Shaw's excellent *Command Line Crash Course.*^[<http://cli.learncodethehardway.org/book/>].
+----
 
 # Case 2: Working with Bibliographies
 
