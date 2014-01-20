@@ -1,7 +1,7 @@
 ---
 title: Sustainable Authorship in Plain Text Using Pandoc and Markdown
 author: Dennis Tenen, Grant Wythoff
-date: November 4, 2013
+date: January 20, 2014
 tags: tutorial, pandoc, plain text, draft
 ---
 
