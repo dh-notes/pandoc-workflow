@@ -176,7 +176,9 @@ bibliography: project.bib
 ---
 ```
 
-Thus a file with the YAML metadata header as written above and the compile command `$ pandoc -S project.md -o project.docx` would produce the same results.
+Recall that a `|` flag tells Pandoc to interpret line breaks as written, so that the two author's names appear on separate lines.
+
+Thus a file with the YAML metadata header written as above and compiled with the command `$ pandoc -S project.md -o project.docx` would produce the same results as a file with a simple title block and the command `$ pandoc -S --biblio project.bib project.md -o project.docx`. Experiment with both: the choice is up to the user's preference.
 
 ## Changing citation styles
 
@@ -186,6 +188,19 @@ The default citation style in Pandoc is Chicago author-date. We can specify a di
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, take the bibliography from project.bib using the MLA stylesheet, and convert my Markdown file into MS Word (as you can guess from the extension)." As you get more familiar with citation stylesheets, consider adding your custom-tailored .csl files for journals in your field to the archive as a service to the community.
 
+This citation style file can also be declared in the YAML metadata header, rather than in the compile command, using `csl: mla.csl`.  Your header would now read:
+
+```
+---
+title: Plain Text Workflow
+author: |
+    Dennis Tenen\
+    Grant Wythoff
+date: January 20, 2014
+bibliography: project.bib
+csl: mla.csl
+---
+```
 
 # Summary
 
