@@ -66,7 +66,7 @@ Markdown is a convention for structuring your plain-text documents semantically.
 
 Markdown conventions come in several "flavors" designed for use in particular contexts, such as blogs, wikis, or code repositories. Pandoc is one such flavor of Markdown, geared for academic use. Its conventions are described one the "Pandoc's Markdown" page on John MacFarlane's website.^[<http://johnmacfarlane.net/pandoc/demo/example9/pandocs-markdown.html>]
 
-Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line. See Case 2 footnotes for more examples.]
+Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with a title block that should look like this:^[Search for "pandoc YAML block" for an alternative and more powerful way to format the title block. Using the YAML title block will allow you to specify the bibliography in the header, rather than through the command line.]
 
 ```
 % Plain Text Workflow
@@ -90,9 +90,9 @@ Finally, let's add an illustration. Copy an image (any small image) to your fold
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only covers the basics.
 
-There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.
+There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.  The workflow we outline here uses only free and open source tools created by and for the academic community.
 
-Let's see what Pandoc allows us to do with our Markdown file.
+So let's see what Pandoc allows us to do with our Markdown file.
 
 # Getting in touch with your inner terminal
 
@@ -110,7 +110,7 @@ We are now ready to cast our first conversion. Open your terminal window, use `$
 
 If you are not familiar with command line tools, imagine reading the above command as saying something like: "Pandoc, create an MS Word file out of my Markdown file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal.
 
-The structure of this command works the same way in producing a PDF from your Markdown file.  This time, try `pandoc -o project.pdf project.md`, and you will have a beautifully formatted PDF of the document now saved in your project directory.
+The structure of this command works the same way in producing a PDF from your Markdown file.  This time, try `$ pandoc -o project.pdf project.md`, and you will have a beautifully formatted PDF of the document now saved in your project directory.
 
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. You can, for example, specify a LaTeX style file (saved to the same directory), and run something like:
 
@@ -154,6 +154,29 @@ Let's see if this works. Save your file, switch to the terminal window and run:
  `$ pandoc -S --biblio project.bib project.md -o project.docx`.
 
 The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The `biblio` flag tells pandoc where we are keeping our bibliography, and you should already be familiar with `-o` from previous examples.^[Note that you can skip the "biblio" flag if you are specifying the path to .bib in your YAML header block.] The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting at later, as close as possible to the time of publication. For now we are just creating drafts based on reasonable defaults.
+
+Note that if you decide to use a YAML metadata header rather than the simple title block, you can call this bibliography file directly in the document rather than in your compile command.  So, rather than 
+
+```
+% Plain Text Workflow
+% Dennis Tenen, Grant Wythoff
+% January 20, 2014
+```
+
+you would use
+
+```
+---
+title: Plain Text Workflow
+author: |
+    Dennis Tenen\
+    Grant Wythoff
+date: January 20, 2014
+bibliography: project.bib
+---
+```
+
+Thus a file with the YAML metadata header as written above and the compile command `$ pandoc -S project.md -o project.docx` would produce the same results.
 
 ## Changing citation styles
 
