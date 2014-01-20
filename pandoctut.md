@@ -2,13 +2,20 @@
 title: Sustainable Authorship in Plain Text
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
-tags: tutorial, plain text, draft
+tags: tutorial, pandoc, plain text, draft
 ---
 
 # Philosophy
 Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
 In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. The tutorial assumes no prior experience, although we will sometimes digress for the sake of our more advanced readers.
+
+# Target Audience
+Professional writers and researchers are our primary audience. Throughtout this t
+
+With this in mind, we purposefully omit some of the granular, platform- or hardware-bound details. For example, it makes no sense to provide installation instructions for Notepad++, when the Notepad++ website will always have instructions that are both more current and more complete. Similarly, the mechanics of Pandoc markdown are best explored by searching for "Pandoc markdown" on Google, with the likely first result being Pandoc's homepage.
+
+Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment.
 
 # Principles
 
@@ -33,14 +40,6 @@ We will cover three use cases here. In the first, you will learn the basics of m
 
 As a side-effect of this tutorial, you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows.
 
-# Mindset
-Readers with experience in data science, software development, or server administration may want to skip this section and go straight to software requirements.  
-
-For all others, we would like to take a moment to discuss what to do when things go wrong. Something is likely to go wrong in any tutorial. But the magic of computing lies in its universal reproducibility. Software works in similar ways on varied platforms, on machines in various state of disrepair, and under the precarious conditions of competing standards, formats, and protocols. The *Programming Historian 2* has a good guide on "what to do if you get stuck."^[http://programminghistorian.org/lessons/troubleshooting] In addition to the many helpful tips there, we suggest learning about the Freenode Internet Relay Chat (IRC) servers, a helpful online community that is often willing to help with many of the tools discussed in this article.^[<irchelp.org> can help you get started with IRC.] Generally, your troubleshooting heuristic should start with googling the exact error message (by using double quotes in Google), asking the IRC channel, and then posting to relevant Q&A sites like Stack Exchange or Digital Humanities Questions & Answers. Finally, if all else fails, we are happy to answer your questions directly by email.
-
-With this in mind, we purposefully omit some of the granular, platform- or hardware-bound details. For example, it makes no sense to provide installation instructions for Notepad++, when the Notepad++ website will always have instructions that are both more current and more complete. Similarly, the mechanics of Pandoc markdown are best explored by searching for "Pandoc markdown" on Google, with the likely first result being Pandoc's homepage.
-
-Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment.
 
 # Software requirements
 
@@ -158,4 +157,7 @@ Parse the command into English as you are typing. In my head, I translate the ab
 
 To recapitulate: you now have a project directory which contains a number of "source" files, your `project.md` file, `project.bib` file, a `.csl` file, some images, along with some "target" files which we created during the tutorial, such as the `project.docx`, `project.pdf`, and `slides.html`. You are also able to write papers in Markdown, to create drafts in multiple formats, to add bibliographies, to change citation styles, and to create slide decks for presentations.
 
-Pandoc can handle many more formats that are worth exploring. Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.] 
+# Useful Resources
+Pandoc can handle many more formats that are worth exploring. Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.]
+
+For all others, we would like to take a moment to discuss what to do when things go wrong. Something is likely to go wrong in any tutorial. But the magic of computing lies in its universal reproducibility. Software works in similar ways on varied platforms, on machines in various state of disrepair, and under the precarious conditions of competing standards, formats, and protocols. The *Programming Historian 2* has a good guide on "what to do if you get stuck."^[http://programminghistorian.org/lessons/troubleshooting] In addition to the many helpful tips there, we suggest learning about the Freenode Internet Relay Chat (IRC) servers, a helpful online community that is often willing to help with many of the tools discussed in this article.^[<irchelp.org> can help you get started with IRC.] Generally, your troubleshooting heuristic should start with googling the exact error message (by using double quotes in Google), asking the IRC channel, and then posting to relevant Q&A sites like Stack Exchange or Digital Humanities Questions & Answers. Finally, if all else fails, we are happy to answer your questions directly by email.
