@@ -90,7 +90,7 @@ Finally, let's add an illustration. Copy an image (any small image) to your fold
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only covers the basics.
 
-There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, such as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/). But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.  The workflow we outline here uses only free and open source tools created by and for the academic community.
+There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file.,  But in order to maintain full control over your files and take advantage of Pandoc's ability to support the complete scholarly apparatus, from bibliographies to illustrations, we recommend that you stick with simple, plain text files stored on your computer.  The workflow we outline here uses only free and open source tools created by and for the academic community.
 
 So let's see what Pandoc allows us to do with our Markdown file.
 
@@ -211,8 +211,11 @@ Pandoc can handle many more formats that are worth exploring. Your notes, blog e
 
 Markdown is enjoying a period of growth at the moment, not just as a tool for writing scholarly papers but as a convention for online editing in general. Major sites like Reddit, GitHub, and Wordpress support Markdown authorship natively. It is now possible to write a wide range of documents: articles, blog posts, wikis, syllabi, and recommendation letters in one format, subject to unified workflows of search, discovery, backup, and distribution. The popularity of Markdown in such diverse contexts has led to a diverse and innovative ecosystem of support authoring tools, support groups, and publishing platforms. 
 
-There is no better place to start looking for support than John MacFarlane's [site](https://leanpub.com/) and the affiliated [mailing list](https://groups.google.com/forum/#!forum/pandoc-discuss). THe: 
-Editors
+There is no better place to start looking for support than John MacFarlane's [site](https://leanpub.com/) and the affiliated [mailing list](https://groups.google.com/forum/#!forum/pandoc-discuss). At least two "Question and Answer" type sites can field questions on Pandoc: [Stack Overflow](http://stackoverflow.com/questions/tagged/pandoc) and [Digital Humanities Q&A](http://digitalhumanities.org/answers/). Finally, a group of friendly regulars staff the #Pandoc channel on Freenode IRC. 
+
+Although we suggest starting out with a simple editor, many (70+, according to [this blog post](http://web.archive.org/web/20140120195538/http://mashable.com/2013/06/24/markdown-tools/)) other, Markdown-specific alternatives to MS Word are available online, and often free of cost. From these, we liked Mou . Draft, Authorea, 
+
+Esuch as [Marked](http://marked2app.com/) (Mac, proprietary), [Markdown Pro](http://www.markdownpro.com/) (Mac, proprietary), and [nvALT](http://brettterpstra.com/projects/nvalt/) (Mac, free). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown, like [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/).ditors
 Platforms
 Get Involved
 
