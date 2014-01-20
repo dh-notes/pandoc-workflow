@@ -1,5 +1,5 @@
 ---
-title: Sustainable Authorship in Plain Text
+title: Sustainable Authorship in Plain Text Using Pandoc and Markdown
 author: Dennis Tenen, Grant Wythoff
 date: November 4, 2013
 tags: tutorial, pandoc, plain text, draft
@@ -8,14 +8,12 @@ tags: tutorial, pandoc, plain text, draft
 # Philosophy
 Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many scholars base their practice on proprietary tools and formats that fall short of even the most basic requirements of academic writing. The reader will relate to being frustrated with the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, the reliance on fragile tools and formats has long-term negative implications for the community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
-In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. The tutorial assumes no prior experience, although we will sometimes digress for the sake of our more advanced readers.
+In this tutorial, we would like to suggest an alternative workflow built around open-source tools and transparent formats. 
 
 # Target Audience
-Professional writers and researchers are our primary audience. Throughtout this t
+Professional writers and researchers constitute our primary audience. The tutorial assumes no prior technical knowledge, but can scale with experience. We often suggest more advanced techniques towards the end of each section. These are clearly marked, and can be returned to after some practice and experimentation.
 
-With this in mind, we purposefully omit some of the granular, platform- or hardware-bound details. For example, it makes no sense to provide installation instructions for Notepad++, when the Notepad++ website will always have instructions that are both more current and more complete. Similarly, the mechanics of Pandoc markdown are best explored by searching for "Pandoc markdown" on Google, with the likely first result being Pandoc's homepage.
-
-Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment.
+A secondary objective in writing this tutorial was to introduce the Markdown + Pandoc combination to journal and book editors. Although not covered in this tutorial, Pandoc offers a powerful template system, which can be used to greatly streamline workflows particular to academic publishing. In a perfect world, journals would accept paper submissions in Markdown and run batch Pandoc processes to normalize for style and formatting. Getting familiar with the mechanics of writing in plain text is a good first step towards a more virtuous publishing ecosystem.
 
 # Principles
 
@@ -54,6 +52,8 @@ You will need to use your search engine and the links provided in the footnotes 
 * **LaTeX**.^[Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>.] Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Beginners may want to consider skipping this step. Otherwise, type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
 
 * **Zotero or Endnote**. Bibliographic reference software like Zotero and Endnote are indispensable tools for organizing and formatting citations in a research paper. These programs can export your libraries as a BibTeX file (which you will learn more about in Case 2 below). This file, itself a formatted plain text document of all your citations, will allow you to quickly and easily cite references using @tags. It should be noted that it's also possible to type all of your bibliographic references by hand, which some readers may prefer when working with non-standardized premodern sources or character encodings. For an example of how to format your bibliographic citation file by hand, *you can download this sample BibTeX file.*
+
+With this in mind, we purposefully omit some of the granular, platform- or hardware-bound details. For example, it makes no sense to provide installation instructions for Notepad++, when the Notepad++ website will always have instructions that are both more current and more complete. Similarly, the mechanics of Pandoc markdown are best explored by searching for "Pandoc markdown" on Google, with the likely first result being Pandoc's homepage. Instead of following the tutorial in a mechanical way, you should strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment.
 
 # Case 1: Markdown basics
 
