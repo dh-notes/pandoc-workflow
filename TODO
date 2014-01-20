@@ -8,26 +8,25 @@ tags: tutorial, pandoc, plain text, draft
 *** Leave until the end***
 1. Your motivation to the reader in the first paragraph comes largely through an appeal frustration with typical workflows. I wonder if more people might be immediately interested in engaging with the tutorial if focused more on extolling the virtues (which you sort of do through the critique of existing practices) rather than criticizing the practices that many people use. At least in my experience, most people who i've talked to about using markdown for editorial work and collaboration (who have any hope of actually doing it) don't experience _that_ much frustration with existing practices since it's all they know. They don't think about accessible formats, much less consider them requirements of academic writing. I think it's good to point out the limitations of proprietary tools and formats, but to begin by explaining how horrible everything else is could easily turn off readers who are interested exploring alternative practices but don't feel as strongly as you do about the inadequacies of what have been traditional workflows.
 
-*** Grant ***
+[ ]*** Grant ***
 2. Principle #1 seems to conflate sustainability and readability. Both are important issues--would it be useful to differentiate them? Principles #2 and #5 seem to be quite similar--perhaps they could be joined?
 
-*** Dennis ***
+[X] *** Dennis ***
 3. Adding target audience statement. It seems that the target audience as it comes across via the tutorial as a whole is a bit muddied. Are you advocating markdown primarily for authors or editors? Sometimes it seems like one; sometimes the other; sometimes both. I think this makes it a bit harder to see where you're coming from and exactly what bits are most relevant to each audience. Could these roles be delineated a bit more? Although they overlap significantly, would it be useful to make arguments for editorial workflow versus person uses of markdown? This might be entirely solved by adding a few more explicit statements for editors and for authors. Since people are often reading more as one than the other, this could help more people see why it's useful for them.
 
-*** Dennis ****
-4. Turn Mindset into list of resrouces at the end of the tutorial. I'm not sure the Mindset section really adds anything, and is potentially more intimidating than helpful for people who are unsure about these technologies. I think this might be more effective as a list of trusted resources to learn about various technologies mentioned throughout the tutorial, and that section could be at the end (with a mention early on so people know it's there) or perhaps integrated into the requirements section.
+[X] *** Dennis ****
+4. Turn Mindset into list of resources at the end of the tutorial. I'm not sure the Mindset section really adds anything, and is potentially more intimidating than helpful for people who are unsure about these technologies. I think this might be more effective as a list of trusted resources to learn about various technologies mentioned throughout the tutorial, and that section could be at the end (with a mention early on so people know it's there) or perhaps integrated into the requirements section.
 
-
-*** Grant flips the Markdown basics and terminal, links to Markdown editors. Dennis to expand the terminal justifcation ***
+[ ] *** Grant flips the Markdown basics and terminal, links to Markdown editors. Dennis to expand the terminal justifcation ***
 5. I think the tutorial could be really split more cleanly in terms of need for command line and not. People could easily adopt a workflow that used markdown (for all the reasons you outline at the beginning) without using pandoc at all. i really do want the pandoc instructions as part of the tutorial, and obviously there are good reasons for using both in tandem, but it isn't truly essential. But when you have the "inner terminal" section ahead of everything else, I can see many readers bailing out at that point. The work of learning and using the command line is a HUGE barrier for lots of people, but I can imagine they'd be more interested in clearing it if they were already sold on the ease and virtues of markdown itself and how they don't need to give up other tools they're used to.
 
 In our experience, instructions like "Open your terminal window" have not been sufficient for the technical level of many of our readers. I'd say that most people who can do that and would want to, can figure out most of this tutorial on their own with existing documentation for the various tools. Your intro to the command line commands suggests the tutorial doesn't assume much technical skill, so the expectation that people even know what the command line is a bit incongruent with that.
 
-*** Grant to expand a on the Biblio section a bit. Already done. ***
+[ ] *** Grant to expand a on the Biblio section a bit. Already done. ***
 6. The tutorial probably should mention explicitly that bibliographic citations CAN be handled without using the technique you describe if people want to hand write them (and not have to worry about whether the CSL files can format all of their sources correctly--it can be pretty bad at non-standardized premodern sources, and can require fudging your zotero entry to get the CSL to output what you want).~~
 
-*** Dennis to cut the slides out into a separate document."
+[ ] *** Dennis to cut the slides out into a separate document. ***
 As for the Slide case study, I'm not sure how this goes beyond the section of Macfarlane's documentation. It's pretty clear that the other sections do. Perhaps the slide tutorial and other more advanced pandoc concepts could be saved for another tutorial? 
 
-*** Already done ***
+[X] *** Grant ***
 7.~~In the summary, you say that you should have a project directory with various source files, etc, but you don't give explicit instructions for creating this earlier. I think readers would benefit from seeing all of the steps spelled out in the relevant sections. I realize that part of your aim here is to get people to understand the general principles rather than just follow a recipe, but people really like recipes, and our experience is that it's a good way to get them on their way to understanding the principles. This is mostly because people see how easy it is and can start to internalize what's going on by seeing concrete examples.~~
