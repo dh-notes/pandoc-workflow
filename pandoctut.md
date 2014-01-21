@@ -6,7 +6,7 @@ tags: tutorial, pandoc, plain text, draft
 bibliography: pandoctut.bib
 ---
 
-![The Lexoriter system, c. 1985. From @price_definitive_1984.](lexoriter.jpg)
+![The Lexoriter system, c. 1983. From @price_definitive_1984.](lexoriter.jpg)
 
 # Philosophy
 Markdown is a syntax for formatting plain text files that is currently enjoying a period of growth, not just as a tool for writing scholarly papers but as a convention for online editing in general. Major sites like Reddit, GitHub, and Wordpress support Markdown authorship natively. It is now possible to write a wide range of documents in one format -- articles, blog posts, wikis, syllabi, and recommendation letters -- using the same set of tools and techniques to search, discover, backup, and distribute our materials. The popularity of Markdown in such diverse contexts has led to a rich ecosystem of practitioners, authoring tools, and publishing platforms.
