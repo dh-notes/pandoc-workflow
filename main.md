@@ -153,7 +153,7 @@ The general idea is to use Zotero as a sort of a "master list" for your referenc
     }
 ```
 
-Take a moment to orient yourself here. You will rarely have to edit these by hand, but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immediately follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your `main.md` file.
+Take a moment to orient yourself here. You will rarely have to edit these by hand (although you can), but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immediately follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your `main.md` file.
 
 Edit the footnote in the first line of your `main.md` file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your `project.bib` file:
 
@@ -227,3 +227,5 @@ But the ecosystem is not limited to editors. [Gitit](http://gitit.net/) and [Iki
 Finally, whole publishing platforms are forming around the use of Markdown. Markdown to marketplace platform [Leanpub](https://leanpub.com) could be an interesting alternative to the traditional publishing model. And we ourselves are experimenting with academic journal design based on GitHub and Readtheocs.org (tools usually used for technical documentation).
 
 Besides Markdown, Pandoc can handle many more formats that are worth exploring. Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.]
+
+# Bibliography
