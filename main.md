@@ -95,9 +95,9 @@ Go ahead and enter some dummy text as well. Empty space is meaningful in Markdow
 
 You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type: `Needs a note.^[my first footnote!]` and `My first [link](www.eff.com)`.
 
-When the text of the link and the address are the same it is faster to write `<www.eff.org>`. Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your main.md: `![image caption](your_image.jpg)`. 
+When the text of the link and the address are the same it is faster to write `<www.eff.org>`. Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your `main.md`: `![image caption](your_image.jpg)`. 
 
-The exclamation mark signals an image. Let's now save the document as main.md, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
+The exclamation mark signals an image. Let's now save the document as `main.md`, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only accepts the basics.
 
@@ -123,7 +123,11 @@ If you are new to the command line, imagine reading the above command as saying 
 
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. Once LaTeX is installed, a beautifully formatted PDF file can be created using the same command structure: `$ pandoc -o main.pdf main.md`. 
 
-With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like: `$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`.
+With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like: 
+
+```
+    $ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`.
+```
 
 At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with `*`, verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments.
 
@@ -194,7 +198,7 @@ The default citation style in Pandoc is Chicago author-date. We can specify a di
 You then simply use the same command: 
 
 ```
-    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md.
+    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md
 ```
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, and output a Word Doc using the citation filter on my Markdown file (as you can guess from the extension)." As you get more familiar with citation stylesheets, consider adding your custom-tailored .csl files for journals in your field to the archive as a service to the community.
