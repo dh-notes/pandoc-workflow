@@ -1,5 +1,8 @@
-pandoc-workflow
-===============
+---
+title: Sustainable Authorship in Plain Text Using Pandoc and Markdown
+author: Dennis Tenen, Grant Wythoff
+tags: tutorial, pandoc, plain text, draft
+---
 
 Contains the source files for the Pandoc Tutorial to appear in the Programming Historian 2. 
 
