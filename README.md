@@ -12,5 +12,5 @@ Contains the source files for the Pandoc Tutorial to appear in the Programming H
   mla.csl           mla stylesheet
 ```
 
-To compile run:
+To compile run:  
 `pandoc -S -o main.pdf --filter pandoc-citeproc main.md`
