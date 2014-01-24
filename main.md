@@ -153,7 +153,9 @@ Take a moment to orient yourself here. You will rarely have to edit these by han
 
 Edit the footnote in the first line of your `main.md` file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your `project.bib` file:
 
-> `Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
+```
+    Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]
+```
 
 Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice. To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
@@ -170,7 +172,9 @@ Now, go back to your metadata header at the top of your .md document, and specif
 
 Let's see if this works. Save your file, switch to the terminal window and run: 
 
-> `$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`.
+```
+    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md.
+```
 
 The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "pandoc-citeproc" filter parses all of your citation tags. The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting all at once and at later time, as close as possible to the time of publication. For now we are just creating drafts based on reasonable defaults.
 
@@ -189,7 +193,9 @@ The default citation style in Pandoc is Chicago author-date. We can specify a di
 
 You then simply use the same command: 
 
-> `$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`.
+```
+    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md.
+```
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, and output a Word Doc using the citation filter on my Markdown file (as you can guess from the extension)." As you get more familiar with citation stylesheets, consider adding your custom-tailored .csl files for journals in your field to the archive as a service to the community.
 
