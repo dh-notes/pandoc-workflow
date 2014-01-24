@@ -43,7 +43,6 @@ In this tutorial, you will first learn the basics of markdown--an easy to read a
 A bonus of this tutorial is that you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows.
 
 # Software requirements
-
 You will need to use your search engine and the links provided in the footnotes to install the following software on your computer:
 
 * A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor.
@@ -69,46 +68,34 @@ Markdown conventions come in several "flavors" designed for use in particular co
 
 Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with something called a ["YAML"](https://en.wikipedia.org/wiki/YAML) block, which contains some useful metadata. It should look like this:
 
-```
----
-title: Plain Text Workflow
-author: Dennis Tenen, Grant Wythoff
-date: January 20, 2014
----
-```
+> `---`  
+> title: Plain Text Workflow  
+> author: Dennis Tenen, Grant Wythoff  
+> date: January 20, 2014  
+> `---`  
 
 Pandoc-flavored Markdown stores each of the above values, and "prints" them in the appropriate location of your outputted document once you are ready to typeset. We will later learn to add other, more powerful fields to the YAML block. For now, let's pretend we are writing a paper that contains three sections, each subdivided into two subsections. Leave a blank line after last three dashes in the YAML block and type:
 
-```
-# Section 1
-
-## Subsection 1.1
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
-
-## Subsection 1.2
-
-# Section 2
-
-# Section 3
-```
+> `#` Section 1  
+>  
+> `##` Subsection 1.1  
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+>  
+> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+>  
+> `##` Subsection 1.2
+>
+> `#` Section 2
+>
+> `#` Section 3
 
 Go ahead and enter some dummy text as well. Empty space is meaningful in Markdown: do not indent your paragraphs. Instead, separate paragraphs by using an blank line. Blank lines must also precede section headers.
 
-You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type:  
+You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type: `Needs a note.^[my first footnote!]` and `My first [link](www.eff.com)`.
 
-`Needs a note.^[my first footnote!]`
+When the text of the link and the address are the same it is faster to write `<www.eff.org>`. Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your main.md: `![image caption](your_image.jpg)`. 
 
-and
-
-`My first [link](www.eff.com)`.^[When the text of the link and the address are the same it is faster to write `<www.eff.org>`]
-
-Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your `main.md`: 
-
-`![image caption](your_image.jpg)`
-
-The exclamation mark signals an image. Let's now save the document as `main.md`, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
+The exclamation mark signals an image. Let's now save the document as main.md, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
 
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only accepts the basics.
 
@@ -128,23 +115,13 @@ The next command is `$ ls` (list) which simply lists the files in the current di
 These three terminal commands: `pwd`,  `ls`,  and `cd` are all you need for this tutorial. Practice them for a few minutes to navigate your documents folder and think about they way you have organized your files. Follow along with your regular graphical file manager to keep your bearings. This may be a good time to do some house-cleaning. 
 
 # Using Pandoc to convert Markdown to an MS Word document
-We are now ready to typeset! Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md file and your images, you are in the right place. To convert .md into .docx type:  
-
-`$ pandoc -o main.docx main.md`  
-
-Open the file with MS Word to check your results. Alternatively, if you use Open or Libre Office you can run:  
-
-`$ pandoc -o project.odt main.md`   
+We are now ready to typeset! Open your terminal window, use `$ pwd` and `$ cd` to navigate to the correct folder for your project. Once you are there, type `$ ls` in the terminal to list the files. If you see your .md file and your images, you are in the right place. To convert .md into .docx type: `$ pandoc -o main.docx main.md`. Open the file with MS Word to check your results. Alternatively, if you use Open or Libre Office you can run: `$ pandoc -o project.odt main.md`.
 
 If you are new to the command line, imagine reading the above command as saying something like: "Pandoc, create an MS Word file out of my Markdown file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal.
 
-More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. Once LaTeX is installed, a beautifully formatted PDF file can be created using the same command structure:
+More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. Once LaTeX is installed, a beautifully formatted PDF file can be created using the same command structure: `$ pandoc -o main.pdf main.md`. 
 
-`$ pandoc -o main.pdf main.md`
-
-With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like:
-
-`$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`  
+With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like: `$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`.
 
 At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with `*`, verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments.
 
@@ -158,40 +135,40 @@ If you are not using a reference manger like Endnote or Zotero, you should. Zote
 The general idea is to use Zotero as a sort of a "master list" for your references, and to generate these much smaller .bib files that will live in the same directory as your project. Go ahead and open your .bib file with the plain-text editor of your choice.^[Note that the .bib extension may be "registered" to Zotero in your operating system. That means when you click on a .bib file it is likely that Zotero will be called to open it, whereas we want to open it within a text editor. Eventually, you may want to associate the .bib extension with your text editor.] Your .bib file should contain multiple entries that look something like this:  
 
 ```
-@article{fyfe_digital_2011,
-    title = {Digital Pedagogy Unplugged},
-    volume = {5},
-    url = {http://digitalhumanities.org/dhq/vol/5/3/000106/000106.html},
-    number = {3},
-    urldate = {2013-09-28},
-    author = {Fyfe, Paul},
-    year = {2011},
-    file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
-}
+    @article{fyfe_digital_2011,
+        title = {Digital Pedagogy Unplugged},
+        volume = {5},
+        url = {http://digitalhumanities.org/dhq/vol/5/3/000106/000106.html},
+        number = {3},
+        urldate = {2013-09-28},
+        author = {Fyfe, Paul},
+        year = {2011},
+        file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
+    }
 ```
 
 Take a moment to orient yourself here. You will rarely have to edit these by hand, but it is important to understand that .bib is another convention for keeping your bibliographies organized. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immediately follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your `main.md` file.
 
 Edit the footnote in the first line of your `main.md` file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your `project.bib` file:
 
-`Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
+> `Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
 
 Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice. To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
 Now, go back to your metadata header at the top of your .md document, and specify the bibliography file to be used, like so:
 
 ```
----
-title: Plain Text Workflow
-author: Dennis Tenen, Grant Wythoff
-date: January 20, 2014
-bibliography: project.bib
----
+    ---
+    title: Plain Text Workflow
+    author: Dennis Tenen, Grant Wythoff
+    date: January 20, 2014
+    bibliography: project.bib
+    ---
 ```
 
-Let's see if this works. Save your file, switch to the terminal window and run:
+Let's see if this works. Save your file, switch to the terminal window and run: 
 
- `$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`
+> `$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`.
 
 The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "pandoc-citeproc" filter parses all of your citation tags. The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting all at once and at later time, as close as possible to the time of publication. For now we are just creating drafts based on reasonable defaults.
 
@@ -199,18 +176,18 @@ The upper case `S` flag stands for "smart", a mode which produces "typographical
 The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory as `mla.csl`. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by updating the YAML header:
 
 ```
----
-title: Plain Text Workflow
-author: Dennis Tenen, Grant Wythoff
-date: January 20, 2014
-bibliography: project.bib
-csl: mla.csl
----
+    ---
+    title: Plain Text Workflow
+    author: Dennis Tenen, Grant Wythoff
+    date: January 20, 2014
+    bibliography: project.bib
+    csl: mla.csl
+    ---
 ```
 
-You then simply use the same command:
+You then simply use the same command: 
 
-`$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`
+> `$ pandoc -S -o main.docx --filter pandoc-citeproc main.md`.
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, and output a Word Doc using the citation filter on my Markdown file (as you can guess from the extension)." As you get more familiar with citation stylesheets, consider adding your custom-tailored .csl files for journals in your field to the archive as a service to the community.
 
@@ -218,12 +195,12 @@ Parse the command into English as you are typing. In my head, I translate the ab
 You should now be able to write papers in Markdown, to create drafts in multiple formats, to add bibliographies, and to easily change citation styles. A final look at the project directory will reveal a number of "source" files: your `main.md` file, `project.bib` file, a `.csl` file, and some images. Besides the source files you should see some some "target" files that we created during the tutorial: `main.docx` or `main.pdf`. Your folder should look something like this:
 
 ```
-Pandoc-tutorial/
-    main.md
-    project.bib
-    mla.csl
-    image.jpg
-    main.docx
+    Pandoc-tutorial/
+        main.md
+        project.bib
+        mla.csl
+        image.jpg
+        main.docx
 ```
 
 Treat you source files as an authoritative version of your text, and you target files as disposable "print outs" that you can easily generate with Pandoc on the fly. All revisions should go into `main.md`. The `main.docx` file is there for final-stage clean up and formatting. For example, if the journal requires double-spaced manuscripts, you can quickly double-space in Open Office or Microsoft Word. But don't spend too much time formatting. Remember, it all gets stripped out when your manuscript goes to print. The reclaimed cycles spent on needless formatting can be put to better use in polishing the prose of your draft.
@@ -231,12 +208,10 @@ Treat you source files as an authoritative version of your text, and you target 
 # Useful Resources
 Should you run into trouble, there is no better place to start looking for support than John MacFarlane's [site](https://leanpub.com/) and the affiliated [mailing list](https://groups.google.com/forum/#!forum/pandoc-discuss). At least two "Question and Answer" type sites can field questions on Pandoc: [Stack Overflow](http://stackoverflow.com/questions/tagged/pandoc) and [Digital Humanities Q&A](http://digitalhumanities.org/answers/). Questions may also be asked live, on Freenode IRC, #Pandoc channel, frequented by a friendly group of regulars.
 
-Although we suggest starting out with a simple editor, many (70+, according to [this blog post](http://web.archive.org/web/20140120195538/http://mashable.com/2013/06/24/markdown-tools/)) other, Markdown-specific alternatives to MS Word are available online, and often free of cost. From the standalone ones, we liked [Mou](http://mouapp.com/), [Write Monkey](http://writemonkey.com), and [Sublime Text](http://www.sublimetext.com/). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown. These include: <prose.io>,  [Authorea](https://www.authorea.com/), [Penflip](https://www.penflip.com/), [Draft](https://draftin.com/), and [Editorially](https://editorially.com/).
+Although we suggest starting out with a simple editor, many (70+, according to [this blog post](http://web.archive.org/web/20140120195538/http://mashable.com/2013/06/24/markdown-tools/)) other, Markdown-specific alternatives to MS Word are available online, and often free of cost. From the standalone ones, we liked [Mou](http://mouapp.com/), [Write Monkey](http://writemonkey.com), and [Sublime Text](http://www.sublimetext.com/). Several web-based platforms have recently emerged that provide slick, graphic interfaces for collaborative writing and version tracking using Markdown. These include: [prose.io](www.prose.io), [Authorea](www.authorea.com), [Penflip](www.penflip.com), [Draft](www.draftin.com), and [Editorially](www.editorially.com).
 
-But the ecosystem is not limited to editors. [Gitit](http://gitit.net/) and [Ikiwiki](https://github.com/dubiousjim/pandoc-iki) support authoring in Markdown with Pandoc as parser. To this list we may a range of tools that generate fast, static webpages, [Yst](https://github.com/jgm/yst), [Jekyll](https://github.com/fauno/jekyll-pandoc-multiple-formats), [Hakyll](http://jaspervdj.be/hakyll/), and [bash shell script](https://github.com/wcaleb/website) by the historian Caleb MacDaniel.
+But the ecosystem is not limited to editors. [Gitit](http://gitit.net/) and [Ikiwiki](https://github.com/dubiousjim/pandoc-iki) support authoring in Markdown with Pandoc as parser. To this list we may a range of tools that generate fast, static webpages, [Yst](https://github.com/jgm/yst), [Jekyll](github.com/fauno/jekyll-pandoc-multiple-formats), [Hakyll](http://jaspervdj.be/hakyll/), and [bash shell script](https://github.com/wcaleb/website) by the historian Caleb MacDaniel.
 
 Finally, whole publishing platforms are forming around the use of Markdown. Markdown to marketplace platform [Leanpub](https://leanpub.com) could be an interesting alternative to the traditional publishing model. And we ourselves are experimenting with academic journal design based on GitHub and Readtheocs.org (tools usually used for technical documentation).
 
 Besides Markdown, Pandoc can handle many more formats that are worth exploring. Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.]
-
-# Bibliography
