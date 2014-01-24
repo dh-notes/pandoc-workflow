@@ -68,11 +68,13 @@ Markdown conventions come in several "flavors" designed for use in particular co
 
 Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with something called a ["YAML"](https://en.wikipedia.org/wiki/YAML) block, which contains some useful metadata. It should look like this:
 
-> `---`  
-> title: Plain Text Workflow  
-> author: Dennis Tenen, Grant Wythoff  
-> date: January 20, 2014  
-> `---`  
+```
+    ---  
+    title: Plain Text Workflow  
+    author: Dennis Tenen, Grant Wythoff  
+    date: January 20, 2014  
+    ---  
+```
 
 Pandoc-flavored Markdown stores each of the above values, and "prints" them in the appropriate location of your outputted document once you are ready to typeset. We will later learn to add other, more powerful fields to the YAML block. For now, let's pretend we are writing a paper that contains three sections, each subdivided into two subsections. Leave a blank line after last three dashes in the YAML block and type:
 
