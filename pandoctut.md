@@ -104,7 +104,7 @@ and
 
 `My first [link](www.eff.com)`.^[When the text of the link and the address are the same it is faster to write `<www.eff.org>`]
 
-Finally, let's add an illustration. Copy an image (any small image) to your folder, and type in 
+Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your `main.md`: 
 
 `![image caption](your_image.jpg)`
 
