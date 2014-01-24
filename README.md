@@ -13,4 +13,4 @@ Contains the source files for the Pandoc Tutorial to appear in the Programming H
 ```
 
 To compile run:  
-`pandoc -S -o main.pdf --filter pandoc-citeproc main.md`
+`$ pandoc -S -o main.pdf --filter pandoc-citeproc main.md`
