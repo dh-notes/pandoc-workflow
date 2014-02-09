@@ -96,7 +96,7 @@ Go ahead and enter some dummy text as well. Empty space is meaningful in Markdow
 You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to cover the basic components of an average paper. Type:
   
 ```
-`A sentence that needs a note.[ˆ1] 
+A sentence that needs a note.[ˆ1] 
 
 [ˆ1]: my first footnote! And a [link](https://www.eff.org/).
 ```
