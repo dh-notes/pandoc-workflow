@@ -93,7 +93,13 @@ Pandoc-flavored Markdown stores each of the above values, and "prints" them in t
 
 Go ahead and enter some dummy text as well. Empty space is meaningful in Markdown: do not indent your paragraphs. Instead, separate paragraphs by using an blank line. Blank lines must also precede section headers.
 
-You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to to cover the basic components of an average paper. Type: `Needs a note.[ˆ1] [ˆ1]: my first footnote!` and `My first [link](www.eff.com)`.
+You can use asterisks to add bold or italicized emphasis to your words, like this: `*italics*` and `**bold**`. We should also add a link and a footnote to our text to cover the basic components of an average paper. Type:
+  
+```
+`A sentence that needs a note.[ˆ1] 
+
+[ˆ1]: my first footnote! And a [link](https://www.eff.org/).
+```
 
 When the text of the link and the address are the same it is faster to write `<www.eff.org>`. Finally, let's add an illustration. Copy an image (any small image) to your folder, and add the following somewhere in your `main.md`: `![image caption](your_image.jpg)`. 
 
