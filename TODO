@@ -3,13 +3,13 @@ hi dennis and grant,
 
 ---philosophy---
 
-G: i think it would be very helpful to begin with simple statement about what markdown is. the markdown basics section does this very well, perhaps borrow some of that?
+[x] G: i think it would be very helpful to begin with simple statement about what markdown is. the markdown basics section does this very well, perhaps borrow some of that?
 
-G: move sentence about major sites supporting it to later in the section. i think new readers want to know immediately: what is this? how does it help me? the fact that major sites use markdown is part of argument why it's a sustainable tech in itself, but not necessarily appealing to those who don't already understand what it is or the benefits to them. i don't want it to seem like we're just trying to get people to jump on the bandwagon.
+[x] G: move sentence about major sites supporting it to later in the section. i think new readers want to know immediately: what is this? how does it help me? the fact that major sites use markdown is part of argument why it's a sustainable tech in itself, but not necessarily appealing to those who don't already understand what it is or the benefits to them. i don't want it to seem like we're just trying to get people to jump on the bandwagon.
 
-G: the ideas of markdown and plain text are sort of conflated here, which i think is confusing. it might be better if the section proceeded with a bit more obvious progression, like: 1) plain text files are inherently more stable and sustainable than proprietary ones; 2) but since formatting is necessary, techs like markdown add tremendous formatting flexibility at little cost and preserve plain text advantages; 3) using markdown allow you to write articles, blogs, wikis, syllabi, etc. without having to worry about various formatting conventions of each medium; 4) but of course not everyone uses markdown, and you need to produce different kinds of docs, so pandoc helps translate to various formats.
+[x] G: the ideas of markdown and plain text are sort of conflated here, which i think is confusing. it might be better if the section proceeded with a bit more obvious progression, like: 1) plain text files are inherently more stable and sustainable than proprietary ones; 2) but since formatting is necessary, techs like markdown add tremendous formatting flexibility at little cost and preserve plain text advantages; 3) using markdown allow you to write articles, blogs, wikis, syllabi, etc. without having to worry about various formatting conventions of each medium; 4) but of course not everyone uses markdown, and you need to produce different kinds of docs, so pandoc helps translate to various formats.
 
-G: in addition to "dead" formats, it might worthwhile to mention old versions of existing software, like pages or word, can cause trouble, too. even though i have a new version of word, some files from 10 years ago don't look very good (and some really old ones don't work at all). most of us in personal archiving don't think about technological transfer--what happens if you change software or stop migrating certain files. so, good to be explicit about it.
+[x] G: in addition to "dead" formats, it might worthwhile to mention old versions of existing software, like pages or word, can cause trouble, too. even though i have a new version of word, some files from 10 years ago don't look very good (and some really old ones don't work at all). most of us in personal archiving don't think about technological transfer--what happens if you change software or stop migrating certain files. so, good to be explicit about it.
 
 PB: i think the idea that proprietary formats fail basic "scholarly requirements" is a bit misdirected. i think most people interpret requirements of scholarly writing as the methods behind research and clarity of argument and documentation. it seems like you really mean basic archival requirements, which many academics don't think about, even if they care. but they _should_ care and think about it, and if that's your real point, it could be more clearly stated. 
 
@@ -24,7 +24,7 @@ D: i would go without everything in the paragraph after and including "In such a
 
 D: it would be useful if the primary audience description captured more of the activities you see as benefitting from the tools--not just writing and researching, but saving work over long periods of time, using work in different formats (syllabus on a website, pdf, etc.), sharing work with others, etc. it's really for anyone who creates and shares documents (not just writers and researchers) and cares about preservation even in the short term. you have a secondary objective, but no primary objective stated as clearly… (the values of markdown in general)
 
-G: perhaps the secondary objective could be moved to the objectives section, and you could tease out a bit more in the target audience section how the tutorial would be useful for different audiences. scholars (simple file formatting, self-archiving, etc.), editors, for managing and sharing and publishing docs, working with clean files, etc.
+[x] G: perhaps the secondary objective could be moved to the objectives section, and you could tease out a bit more in the target audience section how the tutorial would be useful for different audiences. scholars (simple file formatting, self-archiving, etc.), editors, for managing and sharing and publishing docs, working with clean files, etc.
 
 D: "run batch Pandoc processes" is a bit intimidating---maybe leave out at this point in the article? the point could be made later on.
 
@@ -40,7 +40,7 @@ D: for 4, add that it should move easily between file formats.
 
 ---objectives---
 
-G: objectives should be first (per PH style). more clearly delineate markdown and pandoc. fine that you're doing both, but be clear they are separable steps. also, i'd remove the "bonus" line to keep the main objectives clear and avoid introducing unnecessary fright.
+[x] G: objectives should be first (per PH style). more clearly delineate markdown and pandoc. fine that you're doing both, but be clear they are separable steps. also, i'd remove the "bonus" line to keep the main objectives clear and avoid introducing unnecessary fright.
 
 
 ---requirements---
@@ -53,7 +53,7 @@ D: put latex at end and mark as optional -- the fewer "absolute" requirements th
 
 D: condense the last paragraph and put it first. all you really need to say is: we're providing links to the best directions.
 
-G: put the line about "following the tutorial in a mechanical way" in the objectives section. that's one of the objectives, right? to introduce the concepts and workflow, not provide foolproof technical recipe.
+[x] G: put the line about "following the tutorial in a mechanical way" in the objectives section. that's one of the objectives, right? to introduce the concepts and workflow, not provide foolproof technical recipe.
 
 
 ---markdown basics---
@@ -64,11 +64,11 @@ PB: is it possible to point out in the tutorial how to have one main folder (as 
 
 PB: i'd like to see a brief intro to markdown basics and formatting, THEN get into creating a sample doc.
 
-G: remove or shorten second paragraph of dummy text. be sure to say copy and paste the text, not just type the text in the instructions.
+[x] G: remove or shorten second paragraph of dummy text. be sure to say copy and paste the text, not just type the text in the instructions.
 
-G: can you show a show an entire complete file with header and formatting commands? i know there bits at daringfireball, but it would be nice visually to see at a glance what a markdown file looks like and some of the things it can do.
+[x] G: can you show a show an entire complete file with header and formatting commands? i know there bits at daringfireball, but it would be nice visually to see at a glance what a markdown file looks like and some of the things it can do.
 
-G: i'd like to provide a sample file for download--for convenience but also to show markdown at work--very easy to share files with formatting! 
+[x] G: i'd like to provide a sample file for download--for convenience but also to show markdown at work--very easy to share files with formatting! 
 
 
 ---terminal---
@@ -79,9 +79,9 @@ D: in the terminal intro, give full prose expansion of commands at least once
 
 ---pandoc conversion section---
 
-G: it might be useful to convert to word AND to html, in order to to show a journal workflow and a blog workflow from the same original document---which seems to be one of the main selling points here, but isn't explicitly illustrated. i know it's fairly trivial, but seeing it spelled out would help make that obvious.
+[x] G: it might be useful to convert to word AND to html, in order to to show a journal workflow and a blog workflow from the same original document---which seems to be one of the main selling points here, but isn't explicitly illustrated. i know it's fairly trivial, but seeing it spelled out would help make that obvious.
 
-G: move "at this point" paragraph and the following "above all" paragraph to the earlier markdown intro. make sure people know it can handle virtually all basic stuff out of the box. ideally, people will be able to convert a file you've helped them to create and see the nicely formatting document. i'm thinking of someone just quickly scrolling through the article---if they could see the simple markdown file/format, and then a pretty pdf, that could easily get them interested.
+[x] G: move "at this point" paragraph and the following "above all" paragraph to the earlier markdown intro. make sure people know it can handle virtually all basic stuff out of the box. ideally, people will be able to convert a file you've helped them to create and see the nicely formatting document. i'm thinking of someone just quickly scrolling through the article---if they could see the simple markdown file/format, and then a pretty pdf, that could easily get them interested.
 
 
 ---bibliographies---
@@ -100,6 +100,6 @@ D: i could see adding a small paragraph at the beginning to mention that working
 
 D: emphasize early on in the tutorial the point you make at the end  that most publishers want the most stripped down versions of texts with minimal formatting.
 
-G: last P before bibliography should be the intro---all really great reasons to go through the tutorial!
+[x] G: last P before bibliography should be the intro---all really great reasons to go through the tutorial!
 
 D: emphasize that a plain text editor is the fastest way to go (fewer tools to manage), there are more luxurious environments that might be useful depending on particular needs.

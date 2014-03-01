@@ -8,19 +8,27 @@ bibliography: pandoctut.bib
 
 ![The Lexoriter system, c. 1983. From @price_definitive_1984.](lexoriter.jpg)
 
+# Objectives
+In this tutorial, you will first learn the basics of Markdown--an easy to read and write markup syntax for plain text--and second how to use Pandoc, a command line tool that converts plain text into a number of beautifully formatted file types: PDF, .docx, HTML, LaTeX, slide decks, and more.^[<http://johnmacfarlane.net/pandoc/>. Don't worry if you don't understand some of of this terminology yet!]  With Pandoc as your digital typesetting tool, you can use Markdown syntax to add figures, a bibliography, formatting, and easily change citation styles from Chicago to MLA (for instance), all in plain text.
+
+## A Note on use
+We purposefully omit some of the granular, platform- or operating system-bound details of installing the [software listed below](#software). For example, it makes no sense to provide installation instructions for LaTeX, when the canonical online instructions for your operating system will always remain more current and more complete. Similarly, the mechanics of Pandoc installation are best explored by searching for "installing Pandoc" on Google, with the likely first result being Pandoc's homepage.
+
+Instead of following this tutorial in a mechanical way, we recommend you strive to understand the solutions offered here as a *methodology*, which may need to be tailored further to fit your environment. Installing these tools is perhaps the biggest barrier to participation. Allot yourself enough time and patience to install everything properly. Do it with a colleague who has a similar set-up and help each other out. Consult the Useful Resources section below if you get stuck.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.]
+
 # Philosophy
-Markdown is a syntax for formatting plain text files that is currently enjoying a period of growth, not just as a tool for writing scholarly papers but as a convention for online editing in general. Major sites like Reddit, GitHub, and Wordpress support Markdown authorship natively. It is now possible to write a wide range of documents in one format -- articles, blog posts, wikis, syllabi, and recommendation letters -- using the same set of tools and techniques to search, discover, backup, and distribute our materials. The popularity of Markdown in such diverse contexts has led to a rich ecosystem of practitioners, authoring tools, and publishing platforms.
+As a means of encoding alphanumeric characters in 1s and 0s, plain text files have been around since the electronic typewriter. The longevity of this standard inherently makes plain text more sustainable and stable than proprietary formats. While files produced even ten years ago in Microsoft Word and Apple's Pages can cause significant problems when opened with the latest version, it is still possible to open a file written in any number of "dead" plain text editors from the past several decades: AlphaPlus, Perfect Writer, Text Wizard, Spellbinder, WordStar, or Isaac Asmiov's favorite SCRIPSIT 2.0, made by Radio Shack. Writing in plain text guarantees that your files will remain readable ten, fifteen, twenty years from now. In this tutorial, we outline a workflow that frees the researcher from proprietary word processing software and fragile file formats.
 
-Although Markdown's rising popularity is relatively recent, plain text has been around since the electronic typewriter. It is still possible to open a file written in any number of "dead" plain text word processors from the past several decades: AlphaPlus, Perfect Writer, Text Wizard, Spellbinder, WordStar or Isaac Asmiov's favorite SCRIPSIT 2.0, made by Radio Shack.  But opening a turn of the 21st century document written in Word Perfect or Apple's Pages may cause problems.
+Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many authors base their practice on proprietary tools and formats that fall short of even the most basic requirements of scholarly writing. Perhaps you can relate to being frustrated by the fragility of footnotes, bibliographies, figures, and book drafts authored in Microsoft Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, this reliance on fragile tools and formats has long-term negative implications for the academic community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
 
-Writing, storing, and retrieving documents are activities central to the humanities research workflow. And yet, many authors base their practice on proprietary tools and formats that fall short of even the most basic requirements of scholarly writing. Perhaps you can relate to being frustrated by the fragility of footnotes, bibliographies, figures, and book drafts authored in MS Word. Still, most journals insist on submissions in .docx format. More than causing personal frustration, this reliance on fragile tools and formats has long-term negative implications for the academic community. In such an environment, journals must outsource typesetting, alienating authors from the material contexts of publication and furthermore adding unnecessary barriers to the unfettered circulation of knowledge. Closed formats ultimately lead to closed intellectual communities.^[See <http://www.antipope.org/charlie/blog-static/2013/10/why-microsoft-word-must-die.html> for an extended discussion of this topic.]
+But without formatting or illustrations, the applicability of plain text is limited. This is where Markdown comes in. Markdown is a syntax for formatting plain text files that is currently enjoying a period of growth, not just as a tool for writing scholarly papers but as a convention for online editing in general. Markdown allows you to simply and easily share every element of the scholarly apparatus across all possible platforms, from bibliographies to illustrations to citation styles. 
 
-Not only does writing in plain text guarantee that your files will remain readable ten, fifteen, twenty years from now, it also allows you to simply and easily share every element of the scholarly apparatus across all possible platforms, from bibliographies to illustrations to citation styles.  In this tutorial, we outline a workflow that frees the researcher from proprietary word processing software and fragile file formats.
+Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials. Major sites like Reddit, GitHub, and Wordpress support Markdown authorship natively. It is now possible to write a wide range of documents in one format -- articles, blog posts, wikis, syllabi, and recommendation letters -- using the same set of tools and techniques to search, discover, backup, and distribute our materials. The popularity of Markdown in such diverse contexts has led to a rich ecosystem of practitioners, authoring tools, and publishing platforms.
  
 # Target Audience
 Professional writers and researchers constitute our primary audience. The tutorial assumes no prior technical knowledge, but can scale with experience. We often suggest more advanced techniques towards the end of each section. These are clearly marked, and can be revisited after some practice and experimentation.
 
-A secondary objective in writing this tutorial is to introduce the Markdown + Pandoc combination to journal and book editors. Although not covered in this tutorial, Pandoc offers a powerful template system (through LaTeX), which can be used to greatly streamline workflows particular to academic publishing. In a perfect world, journals would accept paper submissions in Markdown and run batch Pandoc processes to normalize for style and formatting. Getting familiar with the mechanics of writing in plain text is a good first step towards that vision.
+Simple file formatting allows scholars to easily scale their projects to different platforms: from notes to blog to article. Similarly, version tracking of plain text through GitHub, although not covered here, is a powerful means of collaborative writing. For journal and book editors, Pandoc offers a powerful template system (through LaTeX), which can be used to greatly streamline workflows particular to academic publishing. In a perfect world, journals would accept paper submissions in Markdown and run batch Pandoc processes to normalize for style and formatting. Getting familiar with the mechanics of writing in plain text is a good first step towards that vision.
 
 # Principles
 Inspired by best practices in a variety of disciplines, we were guided by the following principles:
@@ -37,12 +45,8 @@ Inspired by best practices in a variety of disciplines, we were guided by the fo
 
 Markdown and LaTeX answer all of these requirements. We chose Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .docx and .tex files).^[There are no good solutions for directly arriving at MS Word from LaTeX.]
 
-# Objectives
-In this tutorial, you will first learn the basics of markdown--an easy to read and write plain text markup syntax--and next use Pandoc to generate a simple .docx or .pdf file.  Pandoc is a command line tool that converts plain text files into a number of beautifully formatted file types: PDF, .docx, HTML, .tex, slide decks, and more.^[<http://johnmacfarlane.net/pandoc/>] ^[Don't worry if you don't understand some of of this terminology yet!] You will then learn to add figures and bibliography, and finally change the citation style from Chicago to MLA.
+# <a name="software"></a>Software requirements
 
-A bonus of this tutorial is that you will be introduced to the basics of command line file management--a skill necessary for many more advanced research workflows.
-
-# Software requirements
 You will need to use your search engine and the links provided in the footnotes to install the following software on your computer:
 
 * A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor.
@@ -54,8 +58,6 @@ You will need to use your search engine and the links provided in the footnotes 
 * **LaTeX**. Detailed, platform-specific installation instructions available at <http://johnmacfarlane.net/pandoc/installing.html>. Although LaTeX is not covered in this tutorial, it is used by Pandoc for .pdf creation. Advanced users will often convert into LaTeX directly to have more granular control over the typesetting of the .pdf. Beginners may want to consider skipping this step. Otherwise, type `latex -v` to see if LaTeX was installed correctly (you will get an error if it was not and some information on the version if it was).
 
 * **Zotero or Endnote**. Bibliographic reference software like Zotero and Endnote are indispensable tools for organizing and formatting citations in a research paper. These programs can export your libraries as a BibTeX file (which you will learn more about in Case 2 below). This file, itself a formatted plain text document of all your citations, will allow you to quickly and easily cite references using `@tags`. It should be noted that it's also possible to type all of your bibliographic references by hand, using [our bibliography](https://github.com/dhcolumbia/pandoc-workflow/blob/master/pandoctut.bib) as a template.
-
-We purposefully omit some of the granular, platform- or operating system-bound details of software installation. For example, it makes no sense to provide installation instructions for LaTeX, when the canonical online instructions for your operating system will always remain more current and more complete. Similarly, the mechanics of Pandoc installation are best explored by searching for "installing Pandoc" on Google, with the likely first result being Pandoc's homepage. Instead of following the tutorial in a mechanical way, we recommend you strive to understand the solutions offered here as a methodology, which may need to be tailored further to fit your environment. Installing these tools is perhaps the biggest barrier to participation. Allot yourself enough time and patience to install everything properly. Do it with a colleague who has a similar set-up and help each other out. Consult the Useful Resources section if you get stuck.
 
 # Markdown basics
 In this first section, we will learn the basics of writing in Markdown syntax.
@@ -76,14 +78,14 @@ Let's now create a simple document in Markdown. Open a plain-text editor of your
     ---  
 ```
 
-Pandoc-flavored Markdown stores each of the above values, and "prints" them in the appropriate location of your outputted document once you are ready to typeset. We will later learn to add other, more powerful fields to the YAML block. For now, let's pretend we are writing a paper that contains three sections, each subdivided into two subsections. Leave a blank line after last three dashes in the YAML block and type:
+Pandoc-flavored Markdown stores each of the above values, and "prints" them in the appropriate location of your outputted document once you are ready to typeset. We will later learn to add other, more powerful fields to the YAML block. For now, let's pretend we are writing a paper that contains three sections, each subdivided into two subsections. Leave a blank line after last three dashes in the YAML block and paste the following:
 
 > `#` Section 1  
 >  
 > `##` Subsection 1.1  
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 >  
-> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 >  
 > `##` Subsection 1.2
 >
@@ -105,7 +107,42 @@ When the text of the link and the address are the same it is faster to write `<w
 
 The exclamation mark signals an image. Let's now save the document as `main.md`, where .md stands for Markdown. Next, save a couple images you'd like to use in your document to this folder for later use.
 
+So, your complete file might look something like the following.  You can download this sample .md file [here](https://github.com/dhcolumbia/pandoc-workflow/sample.md).
+
+```
+```
+    ---  
+    title: Plain Text Workflow  
+    author: Dennis Tenen, Grant Wythoff  
+    date: January 20, 2014  
+    ---  
+```
+
+# Section 1  
+ 
+## Subsection 1.1  
+Lorem *ipsum* dolor sit amet, **consectetur** adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+ 
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+ 
+## Subsection 1.2
+
+# Section 2
+
+# Section 3
+
+A sentence that needs a note.[ˆ1] 
+
+[ˆ1]: my first footnote! And a [link](https://www.eff.org/)
+
+![image caption](your_image.jpg)
+```
+
 If you'd like to get an idea of how this markup will be interpreted as HTML formatting, try [this online sandbox](http://daringfireball.net/projects/markdown/dingus) and play around with various kinds of syntax.  Move on once you're comfortable with the basics.  Remember that certain elements of *Pandoc*-flavored Markdown (such as the title block and footnotes) will not work in this web form, which only accepts the basics.
+
+At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with `*` or `-`, verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments.
+
+Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures.^[Even `*italics*` and `**bold**` in Markdown are not really formatting marks, but indicate different level of *emphasis*.] The formatting will happen later, once you know the venue and the requirements of publication.
 
 There are programs that allow you to watch a live preview of Markdown output as you edit your plain text file, which we detail below in the Useful Resources section. Few of them support footnotes, figures, and bibliographies however. To take full advantage of Pandoc, we recommend that you stick with simple, plain text files stored locally, on your computer. 
 
@@ -127,6 +164,8 @@ We are now ready to typeset! Open your terminal window, use `$ pwd` and `$ cd` t
 
 If you are new to the command line, imagine reading the above command as saying something like: "Pandoc, create an MS Word file out of my Markdown file." The `-o` part is a "flag," which in this case says something like "instead of me explicitly telling you the source and the target file formats, just guess by looking at the file extension." Many options are available through such flags in Pandoc. You can see the complete list on Pandoc's website^[<http://johnmacfarlane.net/pandoc/README.html>] or by typing `$ man pandoc` in the terminal.
 
+Try running the command `$ pandoc -o project.html main.md`. Now navigate back to your project directory. Can you tell what happened?
+
 More advanced users who have LaTeX installed may want to experiment by converting Markdown into .tex or specially formatted .pdf files. Once LaTeX is installed, a beautifully formatted PDF file can be created using the same command structure: `$ pandoc -o main.pdf main.md`. 
 
 With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like: 
@@ -134,10 +173,6 @@ With time, you will be able to fine tune the formatting of PDF documents by spec
 ```
     $ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`.
 ```
-
-At this point, you should spend some time exploring some of other features of Markdown like quotations (referenced by `>` symbol), bullet lists which start with `*`, verbatim line breaks which start with `|` (useful for poetry), tables, and a few of the other functions listed on the Pandoc's markdown page. Pay particular attention to empty space and the flow of paragraphs. The documentation puts it succinctly when it defines a paragraph to be "one or more lines of text followed by one or more blank line." Note that "newlines are treated as spaces" and that "if you need a hard line break, put two or more spaces at the end of a line." The best way to understand what that means is to experiment freely. Use your editor's preview mode or just run Pandoc to see the results of your experiments.
-
-Above all, avoid the urge to format. Remember that you are identifying *semantic* units: sections, subsections, emphasis, footnotes, and figures.^[Even `*italics*` and `**bold**` in Markdown are not really formatting marks, but indicate different level of *emphasis*.] The formatting will happen later, once you know the venue and the requirements of publication.
 
 # Working with Bibliographies
 In this section, we will add a bibliography to our document and then convert from Chicago to MLA formats.
@@ -231,7 +266,5 @@ Although we suggest starting out with a simple editor, many (70+, according to [
 But the ecosystem is not limited to editors. [Gitit](http://gitit.net/) and [Ikiwiki](https://github.com/dubiousjim/pandoc-iki) support authoring in Markdown with Pandoc as parser. To this list we may a range of tools that generate fast, static webpages, [Yst](https://github.com/jgm/yst), [Jekyll](github.com/fauno/jekyll-pandoc-multiple-formats), [Hakyll](http://jaspervdj.be/hakyll/), and [bash shell script](https://github.com/wcaleb/website) by the historian Caleb MacDaniel.
 
 Finally, whole publishing platforms are forming around the use of Markdown. Markdown to marketplace platform [Leanpub](https://leanpub.com) could be an interesting alternative to the traditional publishing model. And we ourselves are experimenting with academic journal design based on GitHub and Readtheocs.org (tools usually used for technical documentation).
-
-Besides Markdown, Pandoc can handle many more formats that are worth exploring. Your notes, blog entries, code documentation, and wikis can all be authored in Markdown. Increasingly, many platforms like Wordpress and GitHub render Markdown natively. In the long term, your research will benefit from such unified workflows, making it easier to save, search, share, and organize your materials.^[The source files for this document can be found on <https://github.com/dhcolumbia/pandoc-workflow>. Use the "raw" option when viewing in GitHub to see the source Markdown. The authors would like to thank Alex Gil, his colleagues from Columbia's Digital Humanities Center, and the participants of openLab at the Studio in the Butler library for testing the code in this tutorial on a variety of platforms.]
 
 # Bibliography
