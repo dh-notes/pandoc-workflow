@@ -69,28 +69,30 @@ Markdown conventions come in several "flavors" designed for use in particular co
 Let's now create a simple document in Markdown. Open a plain-text editor of your choice and begin typing. The markdown document begins with something called a ["YAML"](https://en.wikipedia.org/wiki/YAML) block, which contains some useful metadata. It should look like this:
 
 ```
-    ---  
-    title: Plain Text Workflow  
-    author: Dennis Tenen, Grant Wythoff  
-    date: January 20, 2014  
-    ---  
+---  
+title: Plain Text Workflow  
+author: Dennis Tenen, Grant Wythoff  
+date: January 20, 2014  
+---  
 ```
 
 Pandoc-flavored Markdown stores each of the above values, and "prints" them in the appropriate location of your outputted document once you are ready to typeset. We will later learn to add other, more powerful fields to the YAML block. For now, let's pretend we are writing a paper that contains three sections, each subdivided into two subsections. Leave a blank line after last three dashes in the YAML block and paste the following:
 
-> `#` Section 1  
->  
-> `##` Subsection 1.1  
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
->  
-> Next paragraph should start like this. Do not indent.
->
-> `##` Subsection 1.2
-> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
->
-> `#` Section 2
->
-> `##` Subsection 2.1
+```
+# Section 1  
+  
+## Subsection 1.1  
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  
+Next paragraph should start like this. Do not indent.
+
+## Subsection 1.2
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque  ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+# Section 2
+
+## Subsection 2.1
+```
 
 Go ahead and enter some dummy text as well. Empty space is meaningful in Markdown: do not indent your paragraphs. Instead, separate paragraphs by using an blank line. Blank lines must also precede section headers.
 
@@ -171,9 +173,8 @@ More advanced users who have LaTeX installed may want to experiment by convertin
 
 With time, you will be able to fine tune the formatting of PDF documents by specifying a LaTeX style file (saved to the same directory), and running something like: 
 
-```
-    $ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`.
-```
+
+`$ pandoc -H format.sty -o project.pdf --number-sections --toc project.tex`
 
 # Working with Bibliographies
 In this section, we will add a bibliography to our document and then convert from Chicago to MLA formats.
@@ -183,43 +184,41 @@ If you are not using a reference manger like Endnote or Zotero, you should. We p
 The general idea is to keep your sources organized under one centralized bibliographic database, while generating specific and much smaller .bib files that will live in the same directory as your project. Go ahead and open your .bib file with the plain-text editor of your choice.^[Note that the .bib extension may be "registered" to Zotero in your operating system. That means when you click on a .bib file it is likely that Zotero will be called to open it, whereas we want to open it within a text editor. Eventually, you may want to associate the .bib extension with your text editor.] Your .bib file should contain multiple entries that look something like this:  
 
 ```
-    @article{fyfe_digital_2011,
-        title = {Digital Pedagogy Unplugged},
-        volume = {5},
-        url = {http://digitalhumanities.org/dhq/vol/5/3/000106/000106.html},
-        number = {3},
-        urldate = {2013-09-28},
-        author = {Fyfe, Paul},
-        year = {2011},
-        file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
-    }
+@article{fyfe_digital_2011,
+    title = {Digital Pedagogy Unplugged},
+    volume = {5},
+    url = {http://digitalhumanities.org/dhq/vol/5/3/000106/000106.html},
+    number = {3},
+    urldate = {2013-09-28},
+    author = {Fyfe, Paul},
+    year = {2011},
+    file = {fyfe_digital_pedagogy_unplugged_2011.pdf}
+}
 ```
 
 You will rarely have to edit these by hand (although you can). In most cases, you will simply "export" the .bib file from Zotero or from a similar reference manager. Take a moment to orient yourself here. Each entry consists of a document type, "article" in our case, a unique identifier (fyfe_digital_2011), and the relevant meta-data on title, volume, author, and so on. The thing we care most about is the unique ID which immediately follows the curly bracket in the first line of each entry. The unique ID is what allows us to connect the bibliography with the main document. Leave this file open for now and go back to your `main.md` file.
 
 Edit the footnote in the first line of your `main.md` file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your `project.bib` file:
 
-```
-    Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]
-```
+`Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
 
 Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice. You can use the `@citation` syntax in any way you see fit: in-line with your text or in the footnotes. To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
 Now, go back to your metadata header at the top of your .md document, and specify the bibliography file to be used, like so:
 
 ```
-    ---
-    title: Plain Text Workflow
-    author: Dennis Tenen, Grant Wythoff
-    date: January 20, 2014
-    bibliography: project.bib
-    ---
+---
+title: Plain Text Workflow
+author: Dennis Tenen, Grant Wythoff
+date: January 20, 2014
+bibliography: project.bib
+---
 ```
 
 This tells Pandoc to look for your bibliography in the `project.bib` file, under the same directory as your `main.md`. Let's see if this works. Save your file, switch to the terminal window and run: 
 
 ```
-    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md
+$ pandoc -S -o main.docx --filter pandoc-citeproc main.md
 ```
 
 The upper case `S` flag stands for "smart", a mode which produces "typographically correct output, converting straight quotes to curly quotes, \-\-\- to em-dashes, \-\- to en-dashes and \.\.\. to ellipses." The "pandoc-citeproc" filter parses all of your citation tags. The result should be a decently formatted MS Word file. If you have LaTeX installed, convert into .pdf using the same syntax for prettier results. Do not worry if things are not exactly the way you like them--remember, you are going to fine-tune the formatting all at once and at later time, as close as possible to the time of publication. For now we are just creating drafts based on reasonable defaults.
@@ -228,19 +227,19 @@ The upper case `S` flag stands for "smart", a mode which produces "typographical
 The default citation style in Pandoc is Chicago author-date. We can specify a different style by using stylesheet, written in a "citation style language" (yet another plain-text convention, in this case for describing citation styles) and usually denoted by the .csl file extension. Luckily, there is an organization that maintains an archive of common citation styles, some even tailored for specific journals. Visit <http://editor.citationstyles.org/about/> to find the .csl file for Modern Language Association, download `modern-language-association.csl`, and save to your project directory as `mla.csl`. Now we need to tell Pandoc to use the MLA stylesheet instead of the default Chicago. We do this by updating the YAML header:
 
 ```
-    ---
-    title: Plain Text Workflow
-    author: Dennis Tenen, Grant Wythoff
-    date: January 20, 2014
-    bibliography: project.bib
-    csl: mla.csl
-    ---
+---
+title: Plain Text Workflow
+author: Dennis Tenen, Grant Wythoff
+date: January 20, 2014
+bibliography: project.bib
+csl: mla.csl
+---
 ```
 
 You then simply use the same command: 
 
 ```
-    $ pandoc -S -o main.docx --filter pandoc-citeproc main.md
+$ pandoc -S -o main.docx --filter pandoc-citeproc main.md
 ```
 
 Parse the command into English as you are typing. In my head, I translate the above into something like: "Pandoc, be smart about formatting, and output a Word Doc using the citation filter on my Markdown file (as you can guess from the extension)." As you get more familiar with citation stylesheets, consider adding your custom-tailored .csl files for journals in your field to the archive as a service to the community.
@@ -249,12 +248,12 @@ Parse the command into English as you are typing. In my head, I translate the ab
 You should now be able to write papers in Markdown, to create drafts in multiple formats, to add bibliographies, and to easily change citation styles. A final look at the project directory will reveal a number of "source" files: your `main.md` file, `project.bib` file, your `mla.csl` file, and some images. Besides the source files you should see some some "target" files that we created during the tutorial: `main.docx` or `main.pdf`. Your folder should look something like this:
 
 ```
-    Pandoc-tutorial/
-        main.md
-        project.bib
-        mla.csl
-        image.jpg
-        main.docx
+Pandoc-tutorial/
+    main.md
+    project.bib
+    mla.csl
+    image.jpg
+    main.docx
 ```
 
 Treat you source files as an authoritative version of your text, and you target files as disposable "print outs" that you can easily generate with Pandoc on the fly. All revisions should go into `main.md`. The `main.docx` file is there for final-stage clean up and formatting. For example, if the journal requires double-spaced manuscripts, you can quickly double-space in Open Office or Microsoft Word. But don't spend too much time formatting. Remember, it all gets stripped out when your manuscript goes to print. The reclaimed cycles spent on needless formatting can be put to better use in polishing the prose of your draft.
