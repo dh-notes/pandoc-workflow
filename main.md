@@ -44,7 +44,7 @@ Inspired by best practices in a variety of disciplines, we were guided by the fo
 
 Markdown and LaTeX answer all of these requirements. We chose Markdown (and not LaTeX) because it offers the most light-weight and clutter free syntax (hence, mark  *down*) and because when coupled with Pandoc it allows for the greatest flexibility in outputs (including .docx and .tex files).^[There are no good solutions for directly arriving at MS Word from LaTeX.]
 
-# <a id="software">Software Requirements</a>
+# <a name="software"></a>Software Requirements
 You will need to use your search engine and the links provided in the footnotes to install the following software on your computer:
 
 * A **plain text editor**. Entering the world of plain-text editing expands your choice of innovative authoring tools dramatically. Search online for "markdown text editor" and experiment with your options. It does not matter what you use as long as it is explicitly a plain text editor. Notepad++ on Windows or TextWrangler on Macs are some easy choices. Remember, since we are not tied to the tool, you can switch your editor at any time.
