@@ -1,0 +1,98 @@
+---philosophy---
+
+[x] G: i think it would be very helpful to begin with simple statement about what markdown is. the markdown basics section does this very well, perhaps borrow some of that?
+
+[x] G: move sentence about major sites supporting it to later in the section. i think new readers want to know immediately: what is this? how does it help me? the fact that major sites use markdown is part of argument why it's a sustainable tech in itself, but not necessarily appealing to those who don't already understand what it is or the benefits to them. i don't want it to seem like we're just trying to get people to jump on the bandwagon.
+
+[x] G: the ideas of markdown and plain text are sort of conflated here, which i think is confusing. it might be better if the section proceeded with a bit more obvious progression, like: 1) plain text files are inherently more stable and sustainable than proprietary ones; 2) but since formatting is necessary, techs like markdown add tremendous formatting flexibility at little cost and preserve plain text advantages; 3) using markdown allow you to write articles, blogs, wikis, syllabi, etc. without having to worry about various formatting conventions of each medium; 4) but of course not everyone uses markdown, and you need to produce different kinds of docs, so pandoc helps translate to various formats.
+
+[x] G: in addition to "dead" formats, it might worthwhile to mention old versions of existing software, like pages or word, can cause trouble, too. even though i have a new version of word, some files from 10 years ago don't look very good (and some really old ones don't work at all). most of us in personal archiving don't think about technological transfer--what happens if you change software or stop migrating certain files. so, good to be explicit about it.
+
+[x] D: i think the idea that proprietary formats fail basic "scholarly requirements" is a bit misdirected. i think most people interpret requirements of scholarly writing as the methods behind research and clarity of argument and documentation. it seems like you really mean basic archival requirements, which many academics don't think about, even if they care. but they _should_ care and think about it, and if that's your real point, it could be more clearly stated. [When giving the workshop we often start with the limitations of current tools. Footnotes and illustrations are quite fragine in MS Word. We rephrased for clairty]
+
+[x] D: in general, i think you could be clearer that markdown allows formatting and style, but is conveyed without proprietary markup. you're not encouraging completely unformatted text files as final form. i can see people worrying or getting confused about this.
+
+[X] D: MS Word is singled out here, but the problems you describe apply to any format, even ones that strive for openness, like odt files, and markdown for that matter. but migrating plain text (regardless of format) is of course infinitely easier, which is worth being explicit about, even as it's what you imply.
+
+[X] D: i would go without everything in the paragraph after and including "In such an environment," i think a lot of people would automatically disagree that closed file formats necessarily lead to closed intellectual communities--as this implies that virtually all scholarship now, virtually of all which does not use open formats, etc., must be part of closed intellectual communities where open exchange doesn't happen. but that's obviously not true. i agree with you that open formats are better, but such rhetoric isn't necessarily useful for skeptical potential adopters. i would be happier if this were phrased more like, "open file formats encourage more open intellectual communities and communication"
+
+
+---target audience---
+
+[X] D: it would be useful if the primary audience description captured more of the activities you see as benefitting from the tools--not just writing and researching, but saving work over long periods of time, using work in different formats (syllabus on a website, pdf, etc.), sharing work with others, etc. it's really for anyone who creates and shares documents (not just writers and researchers) and cares about preservation even in the short term. you have a secondary objective, but no primary objective stated as clearly… (the values of markdown in general)
+
+[x] G: perhaps the secondary objective could be moved to the objectives section, and you could tease out a bit more in the target audience section how the tutorial would be useful for different audiences. scholars (simple file formatting, self-archiving, etc.), editors, for managing and sharing and publishing docs, working with clean files, etc.
+
+[X] D: "run batch Pandoc processes" is a bit intimidating---maybe leave out at this point in the article? the point could be made later on.
+
+
+---principles---
+
+[X] D: it might be useful here to illustrate via an example of a syllabus, which you mention earlier on. there is a great need for formatting, but many people want a web version and a pdf version and a word version. far easier to have one markdown version that you can make into either of these and preserve all the formatting. you do mention this convenience, but i'd like to highlight it a bit more.
+
+[x] D: i wonder if point 2 shouldn't be point 1, especially after the philosophy section. isn't sustainability key? if not, perhaps emphasize flexibility a bit more in the philosophy section. it seems like 3 and 1 should be combined
+
+[x] D: for 4, add that it should move easily between file formats.
+
+
+---objectives---
+
+[x] G: objectives should be first (per PH style). more clearly delineate markdown and pandoc. fine that you're doing both, but be clear they are separable steps. also, i'd remove the "bonus" line to keep the main objectives clear and avoid introducing unnecessary fright.
+
+
+---requirements---
+
+[X] D: "unix terminal emulator"--this could be confused with something like virtual box, so maybe just say something like "command line terminal"--whether mac or pc. more trivially, doesn't one work "on" rather than "in" the command line?
+
+PB: delete "This is humanities computing at its best and will serve as the engine of our workflow." writing functional shell scripts even in service of the humanities is not really humanities computing per its standard definition. [We strongly believe it is!]
+
+[X] D: put latex at end and mark as optional -- the fewer "absolute" requirements the better. a reader could still learn a lot about markdown and the idea of open text formats without going through that step--though i do hope they will be motivated to do so!
+
+[X] D: condense the last paragraph and put it first. all you really need to say is: we're providing links to the best directions.
+
+[x] G: put the line about "following the tutorial in a mechanical way" in the objectives section. that's one of the objectives, right? to introduce the concepts and workflow, not provide foolproof technical recipe.
+
+
+---markdown basics---
+
+[X] D: encourage people to organize however they'd like, but maybe use a more concrete place in the file system for newbies. for example, have everyone create a folder on their desktop, say, or their Documents directory so that it's easy to tell them where to go on the command line. saying, "find the folder you created" just won't work for most readers new to the command line. Is it possible to point out in the tutorial how to have one main folder (as you recommend), and how to have folders for images and other stuff, to show how it's possible to use that kind of organization. i.e.. to have one example of how to use paths to link to images? i want to avoid giving the impression that people need to change their organizational scheme for the tutorial to be useful.
+
+[X] PB: i'd like to see a brief intro to markdown basics and formatting, THEN get into creating a sample doc. 
+
+[x] G: remove or shorten second paragraph of dummy text. be sure to say copy and paste the text, not just type the text in the instructions.
+
+[x] G: can you show a show an entire complete file with header and formatting commands? i know there bits at daringfireball, but it would be nice visually to see at a glance what a markdown file looks like and some of the things it can do.
+
+[x] G: i'd like to provide a sample file for download--for convenience but also to show markdown at work--very easy to share files with formatting! 
+
+
+---terminal---
+
+[X] D: my suggestion to tighten up the first paragraph is: The command line is a friendly place, once you get used to it. If you are already familiar with using the command line, feel free to skip this section. For others, it is important to understand that being able to interact with the command line directly will introduce you to a range of powerful tools that can serve as a basis for more advanced work. For the purposes of this tutorial, you need to learn only a few, very simple commands. 
+
+[X] D: in the terminal intro, give full prose expansion of commands at least once
+
+---pandoc conversion section---
+
+[x] G: it might be useful to convert to word AND to html, in order to to show a journal workflow and a blog workflow from the same original document---which seems to be one of the main selling points here, but isn't explicitly illustrated. i know it's fairly trivial, but seeing it spelled out would help make that obvious.
+
+[x] G: move "at this point" paragraph and the following "above all" paragraph to the earlier markdown intro. make sure people know it can handle virtually all basic stuff out of the box. ideally, people will be able to convert a file you've helped them to create and see the nicely formatting document. i'm thinking of someone just quickly scrolling through the article---if they could see the simple markdown file/format, and then a pretty pdf, that could easily get them interested.
+
+
+---bibliographies---
+
+[x] D: the zotero blurb should emphasize free and openness of the data you have  stored in it, not extending functionality, which is actually fairly rare. (i take it that using exported zotero libraries is not extending its functionality per se)
+
+[x] D: when mentioning that you don't need to edit by hand, emphasize that bib format is bulkier than a fully formatted, and may seem unwieldy but provides enormous flexibility.
+
+[x] D: can you give another example of formatting footnotes--not styles, but how people might integrate quotations and have certain punctuation and spacing requirements  like (Wythoff, 2014): Quote form the source. See also (Tenen, 2014), who agrees.
+
+PB: i could see adding a small paragraph at the beginning to mention that working with  bibliographies inline takes a little getting used to, but is super efficient and in some ways more convenient than footnotes. [this just depends on the style (chicago or MLA, we clarified in general, this section should be good now).
+
+---summary---
+
+[x] D: emphasize early on in the tutorial the point you make at the end  that most publishers want the most stripped down versions of texts with minimal formatting.
+
+[x] G: last P before bibliography should be the intro---all really great reasons to go through the tutorial!
+
+[x] D: emphasize that a plain text editor is the fastest way to go (fewer tools to manage), there are more luxurious environments that might be useful depending on particular needs.
