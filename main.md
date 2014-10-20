@@ -200,7 +200,7 @@ You will rarely have to edit these by hand (although you can). In most cases, yo
 
 Edit the footnote in the first line of your `main.md` file to look like something like this, where `@fyfe_digital_2011` is replaced with one of the unique IDs from your `project.bib` file:
 
-`Some sentence that needs citation.^[@fyfe_digital_2011 argues that too.]`
+`Some sentence that needs citation [@fyfe_digital_2011 argues that too].`^[Thanks to @nickbart1980 in [this thread](https://github.com/programminghistorian/jekyll/issues/46#issuecomment-59219906) for the correction of the original.]
 
 Once we run the markdown through Pandoc, "@fyfe_digital_2011" will be expanded to a full citation in the style of your choice. You can use the `@citation` syntax in any way you see fit: in-line with your text or in the footnotes. To generate a bibliography simply include a section called `# Bibliography` at the end of document.
 
