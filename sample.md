@@ -1,10 +1,8 @@
-```
-    ---  
-    title: Plain Text Workflow  
-    author: Dennis Tenen, Grant Wythoff  
-    date: January 20, 2014  
-    ---  
-```
+---
+title: Plain Text Workflow  
+author: Dennis Tenen, Grant Wythoff  
+date: January 20, 2014  
+---
 
 # Section 1  
  
